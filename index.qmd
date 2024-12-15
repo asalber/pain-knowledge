@@ -1,0 +1,570 @@
+---
+title: Analysis of the knowledge about pain in students of Health Sciences
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+    self-contained: true
+execute: 
+  warning: false
+  message: false
+---
+
+```{r}
+#| echo: false
+myred = "#F8766D"
+myblue = "#00BFC4"
+```
+
+## Objetives
+
+- To evaluate whether there are statistically significant differences in knowledge about pain among students of the Physiotherapy, Medicine, Nursing and Pharmacy degrees.
+- To evaluate whether there is statistically significant difference in knowledge about pain between students of the first and fourth year of the degrees.
+- To evaluate whether there is an interaction between the course and the degree in knowledge about pain.
+
+## Methodology
+
+Cross-sectional observational study. The following questionnaires have been applied to the participating students:
+
+- RNPQ ([Reliability and Pain Knowledge Questionnaire](https://psycnet.apa.org/doiLanding?doi=10.1037%2Ft77106-000)). Questionnaire with 12 questions with three possible answers (True, False, Don't know). 1 point is scored for each correct answer and 0 points for each incorrect answer or "Don't know". The total score ranges from 0 to 12 points, with higher scores indicating greater knowledge about pain.
+
+- HC-PAIRS ([Health care providers' attitudes and beliefs about functional impairments and chronic back pain](https://pubmed.ncbi.nlm.nih.gov/8788576/)). Questionnaire with 15 questions with 7 possible answers on a liker scale (from Totally disagree to Totally agree). It is scored from 1 to 7 points. The total score ranges from 15 to 105, with lower scores indicating greater knowledge about pain.
+
+
+```{r}
+# Packages loading.
+library(tidyverse)
+library(knitr)
+library(broom)
+library(vtable)
+library(tidymodels)
+library(ggpubr)
+library(car)
+library(rstatix)
+library(emmeans)
+library(patchwork)
+```
+
+```{r}
+# Data loading.
+df <- read_csv("datos/datos-2024-11-25.csv") |>
+    # Select the variables of interest.
+    select(Degree, Course, Gender, RNPQ, HC_PAIRS, starts_with("X"), starts_with("Y")) |> 
+    # Convert the categorical variables to factors.
+    mutate(Degree = factor(Degree), Course = factor(Course), Gender = factor(Gender)) |> 
+    # Create a new variable with the combination of the degree and the course.
+    mutate(Degree_Course = interaction(Degree, Course))
+
+# Show 10 random rows of the data frame.
+sample_n(df, 10) |> 
+    kable()
+```
+
+## Sample
+
+### Variables 
+
+```{r}
+# Show the structure of the data frame.
+vt(df)
+```
+
+### Sample size
+
+The number of students who participated in the study was `r nrow(df)`.
+
+Sample size according to the degree.
+
+```{r}
+df |> 
+  count(Degree) |> 
+  kable()
+```
+
+Sample size according to the course.
+
+```{r}
+df |> 
+  count(Course) |> 
+  kable()
+```
+
+Sample size according to the degree and course.
+
+```{r}
+table(df$Degree, df$Course) |> 
+  kable()
+```
+
+Samples size according to the gender.
+
+```{r}
+df |> 
+  count(Gender) |> 
+  kable()
+```
+## Descriptive analysis
+
+### Descriptive statistics
+
+#### According to the degree
+
+```{r}
+library(vtable)
+st(df, vars = c("RNPQ", "HC_PAIRS"), group = "Degree", summ = c("mean(x)",   "sd(x)", "min(x)", "pctile(x)[25]", "median(x)", "pctile(x)[75]", "max(x)"), title = "Resumen descriptivo",  group.long = TRUE,  summ.names = c("Mean", "StdDev", "Min", "Q1", "Median", "Q3", "Max"))
+```
+
+#### According to the course
+
+```{r}
+library(vtable)
+st(df, vars = c("RNPQ", "HC_PAIRS"), group = "Course", summ = c("mean(x)",   "sd(x)", "min(x)", "pctile(x)[25]", "median(x)", "pctile(x)[75]", "max(x)"), title = "Resumen descriptivo",  group.long = TRUE,  summ.names = c("Mean", "StdDev", "Min", "Q1", "Median", "Q3", "Max"))
+```
+
+#### According to the degree and course
+
+```{r}
+library(vtable)
+st(df, vars = c("RNPQ", "HC_PAIRS"), group = "Degree_Course", summ = c("mean(x)",   "sd(x)", "min(x)", "pctile(x)[25]", "median(x)", "pctile(x)[75]", "max(x)"), title = "Resumen descriptivo",  group.long = TRUE,  summ.names = c("Mean", "StdDev", "Min", "Q1", "Median", "Q3", "Max"))
+```
+
+### Boxplot
+
+```{r}
+df |>
+    ggplot(aes(x = Degree, y = RNPQ, fill = Degree)) +
+    geom_boxplot() +
+    labs(title = "Distribution of the RNPQ score by degree",
+         x = "Degree",
+         y = "Score") +
+    theme_minimal()    
+```
+
+```{r}
+df |>
+    ggplot(aes(x = Course, y = RNPQ, fill = Course)) +
+    geom_boxplot() +
+    labs(title = "Distribution of the RNPQ score by course",
+         x = "Course",
+         y = "Score") +
+    theme_minimal()    
+```
+
+
+```{r}
+df |>
+    ggplot(aes(x = Degree, y = RNPQ, fill = Degree)) +
+    geom_boxplot() +
+    labs(title = "Distribution of the RNPQ score by degree and course",
+         x = "Degree",
+         y = "Score") +
+    facet_grid(. ~ Course) +
+    theme_minimal()    
+```
+
+```{r}
+df |>
+    ggplot(aes(x = Degree, y = HC_PAIRS, fill = Degree)) +
+    geom_boxplot() +
+    labs(title = "Distribution of the HC-PAIRS score by degree",
+         x = "Degree",
+         y = "Score") +
+    theme_minimal()    
+```
+
+```{r}
+df |>
+    ggplot(aes(x = Course, y = HC_PAIRS, fill = Course)) +
+    geom_boxplot() +
+    labs(title = "Distribution of the HC-PAIRS score by course",
+         x = "Course",
+         y = "Score") +
+    theme_minimal()    
+```
+
+```{r}
+df |>
+    ggplot(aes(x = Degree, y = HC_PAIRS, fill = Degree)) +
+    geom_boxplot() +
+    labs(title = "Distribution of the HC-PAIRS score by degree and course",
+         x = "Degree",
+         y = "Score") +
+    facet_grid(. ~ Course) +
+    theme_minimal()    
+```
+### Barplot
+
+```{r}
+df |> 
+    ggplot(aes(x = RNPQ, fill = Course)) +
+    geom_bar(aes(y = ..count../sum(..count..))) +
+    labs(title = "Distribution of the RNPQ score by course",
+         x = "RNPQ Score",
+         y = "Frequency") +
+    facet_grid(Course ~ .) +
+    theme_minimal()
+```
+
+```{r}
+df |> 
+    ggplot(aes(x = RNPQ, fill = Degree)) +
+    geom_bar(aes(y = ..count../sum(..count..))) +
+    labs(title = "Distribution of the RNPQ score by degree",
+         x = "RNPQ Score",
+         y = "Frequency") +
+    facet_grid(Degree ~ .) +
+    theme_minimal()
+```
+
+### Histogram
+
+```{r}
+df |> 
+    ggplot(aes(x = HC_PAIRS, fill = Course)) +
+    geom_histogram(aes(y = ..count../sum(..count..)), color = "white") +
+    labs(title = "Distribution of the HC-PAIRS score by course",
+         x = "HC-PAIRS score",
+         y = "Frequency") +
+    facet_grid(Course ~ .) +
+    theme_minimal()
+```
+
+```{r}
+df |> 
+    ggplot(aes(x = HC_PAIRS, fill = Degree)) +
+    geom_histogram(aes(y = ..count../sum(..count..)), color = "white") +
+    labs(title = "Distribution of the HC-PAIRS score by degree",
+         x = "HC-PAIRS score",
+         y = "Frequency") +
+    facet_grid(Degree ~ .) +
+    theme_minimal()
+```
+
+### Means plot
+
+```{r}
+ggline(df, x = "Course", y = "RNPQ", color = "Degree", add = c("mean_ci"), position = position_dodge(0.2), xlab = "Course", ylab = "RNPQ score", main = "Confidence intervals for the means of RNPQ score by degree and course", legend = "top")
+```
+
+:::{.callout-caution}
+It looks that the pain knowledge according to RNPQ score decreases in the last year of Nursing degree, that is very weird.
+:::
+
+```{r}
+ggline(df, x = "Course", y = "HC_PAIRS", color = "Degree", add = c("mean_ci"), position = position_dodge(0.2), xlab = "Course", ylab = "RNPQ score", main = "Confidence intervals for the means of HC-PAIRS score by degree and course", legend = "top")
+```
+
+:::{.callout-caution}
+It looks that the pain knowledge according to HC_PAIRS decreases in the last year of Pharmacy degree, that is very weird.
+:::
+
+
+## Comparison of RNPQ scores
+
+As the dependent variable si quantitative (discrete) and the dependent variables are qualitative, we perform a two-factors ANOVA test for comparing the means of RNPQ score for the groups based on degree and course.
+
+### ANOVA
+
+```{r}
+anova <- aov(RNPQ ~ Degree * Course, data = df)
+# Use the type III sum of squares as the groups are unbalanced.
+Anova(anova, type = "III") |>
+    tidy() |>
+    kable()
+```
+
+The ANOVA test shows both, the degree and the course, have a statistically significant effect on the scores of the RNPQ questionnaire, and also the interaction between the degree and the course has a statistically significant effect (p-value < 0.01).
+
+#### ANOVA assumptions
+
+Now we study the residuals of the model to check the ANOVA assumptions are meet.
+
+First we check normality of residuals.
+
+```{r}
+residuals <- residuals(anova)
+par(mfrow = c(1, 2))  
+hist(residuals)
+qqnorm(residuals, main = "Q-Q Plot of Residuals")
+qqline(residuals, col = "red", lwd = 2)
+```
+
+According to the charts there is no significant departure from normality.
+
+After we check homocedasticity.
+
+```{r}
+leveneTest(RNPQ ~ Degree * Course, data = df) |> 
+    tidy() |> 
+    kable()
+```
+
+The variances of the scores of the RNPQ questionnaire are homogeneous in all the degree-course groups (p-value > 0.05).
+
+### Post-hoc test
+
+As the interaction of degree and course is significant, we estimate the mean for each degree-course group.
+
+```{r}
+marginal_means <- emmeans(anova, ~ Degree * Course)
+marginal_means |> 
+    tidy(conf.int = TRUE) |> 
+    select(-statistic, -p.value) |> 
+    arrange(desc(estimate)) |> 
+    kable()
+```
+
+```{r}
+marginal_means |> 
+    as_tibble() |> 
+    mutate(DegreeCourse = paste(Degree, Course, sep = "-")) |> 
+    mutate(DegreeCourse = reorder(DegreeCourse, emmean)) |> 
+    ggplot(aes(x = emmean, y = DegreeCourse)) +
+    geom_errorbar(aes(xmin = lower.CL, xmax = upper.CL), size = 1, width = 0.2, color = myblue) +
+    geom_point(size = 3, color = myred) +
+    labs(title = "Estimated mean of RNPQ score",
+       x = "Estimated Mean",
+       y = "Degree - Course") +
+    theme_minimal()
+```
+
+Now we compare the means of all the groups by pairs.
+
+```{r}
+pairs(marginal_means) |>
+    as_tibble() |> 
+    arrange(p.value) |> 
+    kable()
+```
+
+As many of this comparisons make no sense, we perform a pairwise comparison of degrees by course.
+
+```{r}
+emmeans(anova, ~ Degree | Course) |> 
+    pairs() |> 
+    as_tibble() |> 
+    arrange(Course, p.value) |> 
+    kable()
+```
+
+```{r}
+emmeans(anova, ~ Degree | Course) |> 
+    pairs() |> 
+    confint() |> 
+    as_tibble() |> 
+    filter(Course == "first") |> 
+    mutate(contrast = reorder(contrast, estimate)) |> 
+    ggplot(aes(x = estimate, y = contrast)) +
+    geom_errorbar(aes(xmin = lower.CL, xmax = upper.CL), size = 1, width = 0.2, color = myblue) +
+    geom_point(size = 3, color = myred) +
+    geom_vline(xintercept = 0, linetype = "dashed") +
+    labs(title = "Difference of RNPQ means in the first course",
+       x = "Estimated Mean difference",
+       y = "Degrees") +
+    theme_minimal()
+```
+
+In the first course there are significant differences between nursing and pharmacy,  pharmacy and physioterapy, medicine and nursing and medicine and pharmacy. 
+
+```{r}
+emmeans(anova, ~ Degree | Course) |> 
+    pairs() |> 
+    confint() |> 
+    as_tibble() |> 
+    filter(Course == "last") |> 
+    mutate(contrast = reorder(contrast, estimate)) |> 
+    ggplot(aes(x = estimate, y = contrast)) +
+    geom_errorbar(aes(xmin = lower.CL, xmax = upper.CL), size = 1, width = 0.2, color = myblue) +
+    geom_point(size = 3, color = myred) +
+    geom_vline(xintercept = 0, linetype = "dashed") +
+    labs(title = "Difference of RNPQ means in the last course",
+       x = "Estimated Mean difference",
+       y = "Degrees") +
+    theme_minimal()
+```
+
+In the last course, there are significant differences between nursing and physiotherapy, medicine and nursing, pharmacy and physiotherapy and medicine and nursing.
+
+In the same way, we compare the courses for each degree.
+
+```{r}
+emmeans(anova, ~ Course | Degree) |> 
+    pairs() |> 
+    as_tibble() |> 
+    arrange(p.value) |> 
+    kable()
+```
+
+```{r}
+emmeans(anova, ~ Course | Degree) |> 
+    pairs() |> 
+    confint() |> 
+    as_tibble() |> 
+    mutate(Degree = reorder(Degree, estimate)) |> 
+    ggplot(aes(x = estimate, y = Degree)) +
+    geom_errorbar(aes(xmin = lower.CL, xmax = upper.CL), size = 1, width = 0.2, color = myblue) +
+    geom_point(size = 3, color = myred) +
+    geom_vline(xintercept = 0, linetype = "dashed") +
+    labs(title = "Difference between the first and last courses means by degrees",
+       x = "Estimated Mean difference",
+       y = "Degrees") +
+    theme_minimal()
+```
+
+There are significant differences between the first and the last courses in medicine, pharmacy and physiotherapy, but not in nursing.
+
+<!-- ### Aligned ranks transformation ANOVA -->
+
+
+## Comparison of HC-PAIRS scores
+
+### ANOVA 
+
+```{r}
+anova <- aov(HC_PAIRS ~ Degree * Course, data = df)
+
+anova |>
+    tidy() |>
+    kable()
+```
+
+The ANOVA test shows both, the degree and the course, have a statistically significant effect on the scores of the HC-PAIRS questionnaire, and also the interaction between the degree and the course has a statistically significant effect (p-value < 0.01).
+
+#### ANOVA assumptions
+
+Now we study the residuals of the model to check the ANOVA assumptions are meet.
+
+First we check normality of residuals.
+
+```{r}
+residuals <- residuals(anova)
+par(mfrow = c(1, 2))  
+hist(residuals)
+qqnorm(residuals, main = "Q-Q Plot of Residuals")
+qqline(residuals, col = "red", lwd = 2)
+```
+
+According to the charts there is no significant departure from normality.
+
+After we check homocedasticity.
+
+```{r}
+leveneTest(HC_PAIRS ~ Degree * Course, data = df) |> 
+    tidy() |> 
+    kable()
+```
+
+The variances of the scores of the HC_PAIRS questionnaire are homogeneous in all the degree-course groups (p-value > 0.05).
+
+### Post-hoc test
+
+As the interaction of degree and course is significant, we estimate the mean for each degree-course group.
+
+```{r}
+marginal_means <- emmeans(anova, ~ Degree * Course)
+marginal_means |> 
+    tidy(conf.int = TRUE) |> 
+    select(-statistic, -p.value) |> 
+    arrange(desc(estimate)) |> 
+    kable()
+```
+
+```{r}
+marginal_means |> 
+    as_tibble() |> 
+    mutate(DegreeCourse = paste(Degree, Course, sep = "-")) |> 
+    mutate(DegreeCourse = reorder(DegreeCourse, emmean)) |> 
+    ggplot(aes(x = emmean, y = DegreeCourse)) +
+    geom_errorbar(aes(xmin = lower.CL, xmax = upper.CL), size = 1, width = 0.2, color = myblue) +
+    geom_point(size = 3, color = myred) +
+    labs(title = "Estimated means of HC_PAIRS score",
+       x = "Estimated Mean",
+       y = "Degree - Course") +
+    theme_minimal()
+```
+
+Now we compare the means of all the groups by pairs.
+
+```{r}
+pairs(marginal_means) |>
+    as_tibble() |> 
+    arrange(p.value) |> 
+    kable()
+```
+
+As many of this comparisons make no sense, we perform a pairwise comparison of degrees by course.
+
+```{r}
+emmeans(anova, ~ Degree | Course) |> 
+    pairs() |> 
+    as_tibble() |> 
+    arrange(Course, p.value) |> 
+    kable()
+```
+
+```{r}
+emmeans(anova, ~ Degree | Course) |> 
+    pairs() |> 
+    confint() |> 
+    as_tibble() |> 
+    filter(Course == "first") |> 
+    mutate(contrast = reorder(contrast, estimate)) |> 
+    ggplot(aes(x = estimate, y = contrast)) +
+    geom_errorbar(aes(xmin = lower.CL, xmax = upper.CL), size = 1, width = 0.2, color = myblue) +
+    geom_point(size = 3, color = myred) +
+    geom_vline(xintercept = 0, linetype = "dashed") +
+    labs(title = "Difference of HC_PAIRS means in the first course",
+       x = "Estimated Mean difference",
+       y = "Degrees") +
+    theme_minimal()
+```
+
+In the first course there are significant differences between pharmacy and physiotherapy and between nursing and physioterapy. 
+
+```{r}
+emmeans(anova, ~ Degree | Course) |> 
+    pairs() |> 
+    confint() |> 
+    as_tibble() |> 
+    filter(Course == "last") |> 
+    mutate(contrast = reorder(contrast, estimate)) |> 
+    ggplot(aes(x = estimate, y = contrast)) +
+    geom_errorbar(aes(xmin = lower.CL, xmax = upper.CL), size = 1, width = 0.2, color = myblue) +
+    geom_point(size = 3, color = myred) +
+    geom_vline(xintercept = 0, linetype = "dashed") +
+    labs(title = "Difference of HC_PAIRS means in the last course",
+       x = "Estimated Mean difference",
+       y = "Degrees") +
+    theme_minimal()
+```
+
+In the last course, there are significant differences between pharmacy and physiotherapy, nursing and physiotherapy, medicine and pharmacy, medicine and physiotherapy and nursing and pharmacy.
+
+In the same way, we compare the courses for each degree.
+
+```{r}
+emmeans(anova, ~ Course | Degree) |> 
+    pairs() |> 
+    as_tibble() |> 
+    arrange(p.value) |> 
+    kable()
+```
+
+```{r}
+emmeans(anova, ~ Course | Degree) |> 
+    pairs() |> 
+    confint() |> 
+    as_tibble() |> 
+    mutate(Degree = reorder(Degree, estimate)) |> 
+    ggplot(aes(x = estimate, y = Degree)) +
+    geom_errorbar(aes(xmin = lower.CL, xmax = upper.CL), size = 1, width = 0.2, color = myblue) +
+    geom_point(size = 3, color = myred) +
+    geom_vline(xintercept = 0, linetype = "dashed") +
+    labs(title = "Difference between the first and last courses means by degrees",
+       x = "Estimated Mean difference",
+       y = "Degrees") +
+    theme_minimal()
+```
+
+There are significant differences between the first and the last courses in pysiotherapy and medicien, but not in nursing and pharmacy.
