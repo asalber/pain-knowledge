@@ -6,6 +6,7 @@ format:
       light: flatly
       dark: darkly
     self-contained: true
+    table-of-contents: true
 execute: 
   warning: false
   message: false
@@ -112,21 +113,21 @@ df |>
 
 ```{r}
 library(vtable)
-st(df, vars = c("RNPQ", "HC_PAIRS"), group = "Degree", summ = c("mean(x)",   "sd(x)", "min(x)", "pctile(x)[25]", "median(x)", "pctile(x)[75]", "max(x)"), title = "Resumen descriptivo",  group.long = TRUE,  summ.names = c("Mean", "StdDev", "Min", "Q1", "Median", "Q3", "Max"))
+st(df, vars = c("RNPQ", "HC_PAIRS"), group = "Degree", summ = c("mean(x)",   "sd(x)", "min(x)", "pctile(x)[25]", "median(x)", "pctile(x)[75]", "max(x)"), title = "Resumen descriptivo",  group.long = TRUE,  summ.names = c("Mean", "StdDev", "Min", "Q1", "Median", "Q3", "Max"), digits = 3)
 ```
 
 #### According to the course
 
 ```{r}
 library(vtable)
-st(df, vars = c("RNPQ", "HC_PAIRS"), group = "Course", summ = c("mean(x)",   "sd(x)", "min(x)", "pctile(x)[25]", "median(x)", "pctile(x)[75]", "max(x)"), title = "Resumen descriptivo",  group.long = TRUE,  summ.names = c("Mean", "StdDev", "Min", "Q1", "Median", "Q3", "Max"))
+st(df, vars = c("RNPQ", "HC_PAIRS"), group = "Course", summ = c("mean(x)",   "sd(x)", "min(x)", "pctile(x)[25]", "median(x)", "pctile(x)[75]", "max(x)"), title = "Resumen descriptivo",  group.long = TRUE,  summ.names = c("Mean", "StdDev", "Min", "Q1", "Median", "Q3", "Max"), digits = 3)
 ```
 
 #### According to the degree and course
 
 ```{r}
 library(vtable)
-st(df, vars = c("RNPQ", "HC_PAIRS"), group = "Degree_Course", summ = c("mean(x)",   "sd(x)", "min(x)", "pctile(x)[25]", "median(x)", "pctile(x)[75]", "max(x)"), title = "Resumen descriptivo",  group.long = TRUE,  summ.names = c("Mean", "StdDev", "Min", "Q1", "Median", "Q3", "Max"))
+st(df, vars = c("RNPQ", "HC_PAIRS"), group = "Degree_Course", summ = c("mean(x)",   "sd(x)", "min(x)", "pctile(x)[25]", "median(x)", "pctile(x)[75]", "max(x)"), title = "Resumen descriptivo",  group.long = TRUE,  summ.names = c("Mean", "StdDev", "Min", "Q1", "Median", "Q3", "Max"), digits = 3)
 ```
 
 ### Boxplot
@@ -252,13 +253,12 @@ It looks that the pain knowledge according to RNPQ score decreases in the last y
 :::
 
 ```{r}
-ggline(df, x = "Course", y = "HC_PAIRS", color = "Degree", add = c("mean_ci"), position = position_dodge(0.2), xlab = "Course", ylab = "RNPQ score", main = "Confidence intervals for the means of HC-PAIRS score by degree and course", legend = "top")
+ggline(df, x = "Course", y = "HC_PAIRS", color = "Degree", add = c("mean_ci"), position = position_dodge(0.2), xlab = "Course", ylab = "HC-PAIRS score", main = "Confidence intervals for the means of HC-PAIRS score by degree and course", legend = "top")
 ```
 
 :::{.callout-caution}
 It looks that the pain knowledge according to HC_PAIRS decreases in the last year of Pharmacy degree, that is very weird.
 :::
-
 
 ## Comparison of RNPQ scores
 
@@ -271,6 +271,7 @@ anova <- aov(RNPQ ~ Degree * Course, data = df)
 # Use the type III sum of squares as the groups are unbalanced.
 Anova(anova, type = "III") |>
     tidy() |>
+    mutate(p.value = format(p.value, scientific = TRUE, digits = 2)) |>
     kable()
 ```
 
@@ -280,14 +281,21 @@ The ANOVA test shows both, the degree and the course, have a statistically signi
 
 Now we study the residuals of the model to check the ANOVA assumptions are meet.
 
+```{r}
+# Add residuals and fitted scores to the data frame.
+df <- df |> mutate(
+    predictions = fitted(anova),
+    residuals = residuals(anova)
+)
+```
+
 First we check normality of residuals.
 
 ```{r}
-residuals <- residuals(anova)
 par(mfrow = c(1, 2))  
-hist(residuals)
-qqnorm(residuals, main = "Q-Q Plot of Residuals")
-qqline(residuals, col = "red", lwd = 2)
+hist(df$residuals)
+qqnorm(df$residuals, main = "Q-Q Plot of Residuals")
+qqline(df$residuals, col = "red", lwd = 2)
 ```
 
 According to the charts there is no significant departure from normality.
@@ -302,7 +310,7 @@ leveneTest(RNPQ ~ Degree * Course, data = df) |>
 
 The variances of the scores of the RNPQ questionnaire are homogeneous in all the degree-course groups (p-value > 0.05).
 
-### Post-hoc test
+### Pairwise comparison of means
 
 As the interaction of degree and course is significant, we estimate the mean for each degree-course group.
 
@@ -323,7 +331,7 @@ marginal_means |>
     ggplot(aes(x = emmean, y = DegreeCourse)) +
     geom_errorbar(aes(xmin = lower.CL, xmax = upper.CL), size = 1, width = 0.2, color = myblue) +
     geom_point(size = 3, color = myred) +
-    labs(title = "Estimated mean of RNPQ score",
+    labs(title = "Estimated means of RNPQ score",
        x = "Estimated Mean",
        y = "Degree - Course") +
     theme_minimal()
@@ -332,7 +340,8 @@ marginal_means |>
 Now we compare the means of all the groups by pairs.
 
 ```{r}
-pairs(marginal_means) |>
+marginal_means |>
+    pairs(infer = T) |>
     as_tibble() |> 
     arrange(p.value) |> 
     kable()
@@ -341,17 +350,27 @@ pairs(marginal_means) |>
 As many of this comparisons make no sense, we perform a pairwise comparison of degrees by course.
 
 ```{r}
-emmeans(anova, ~ Degree | Course) |> 
-    pairs() |> 
+marginal_means|> 
+    pairs(infer = T, by = "Course") |>   
     as_tibble() |> 
     arrange(Course, p.value) |> 
     kable()
 ```
 
 ```{r}
-emmeans(anova, ~ Degree | Course) |> 
-    pairs() |> 
-    confint() |> 
+pwpp(marginal_means, by = "Course") +
+    labs(title = "P-values of pairwise comparisons of the RNPQ means by course")
+```
+
+```{r}
+plot(marginal_means, by = "Course", comparisons = TRUE) +
+    labs(title = "95% confidence intervals for the estimated means\nof RNPQ scores and pairwise comparisons", x = "Estimated means") +
+    theme_minimal()
+```
+
+```{r}
+marginal_means|> 
+    pairs(infer = T, by = "Course") |>
     as_tibble() |> 
     filter(Course == "first") |> 
     mutate(contrast = reorder(contrast, estimate)) |> 
@@ -359,8 +378,7 @@ emmeans(anova, ~ Degree | Course) |>
     geom_errorbar(aes(xmin = lower.CL, xmax = upper.CL), size = 1, width = 0.2, color = myblue) +
     geom_point(size = 3, color = myred) +
     geom_vline(xintercept = 0, linetype = "dashed") +
-    labs(title = "Difference of RNPQ means in the first course",
-       x = "Estimated Mean difference",
+    labs(title = "95% confidence intervals for the difference between the RNPQ means in the last course",
        y = "Degrees") +
     theme_minimal()
 ```
@@ -368,9 +386,8 @@ emmeans(anova, ~ Degree | Course) |>
 In the first course there are significant differences between nursing and pharmacy,  pharmacy and physioterapy, medicine and nursing and medicine and pharmacy. 
 
 ```{r}
-emmeans(anova, ~ Degree | Course) |> 
-    pairs() |> 
-    confint() |> 
+marginal_means|> 
+    pairs(infer = T, by = "Course") |>
     as_tibble() |> 
     filter(Course == "last") |> 
     mutate(contrast = reorder(contrast, estimate)) |> 
@@ -378,7 +395,7 @@ emmeans(anova, ~ Degree | Course) |>
     geom_errorbar(aes(xmin = lower.CL, xmax = upper.CL), size = 1, width = 0.2, color = myblue) +
     geom_point(size = 3, color = myred) +
     geom_vline(xintercept = 0, linetype = "dashed") +
-    labs(title = "Difference of RNPQ means in the last course",
+    labs(title = "95% confidence intervals for the difference between the RNPQ means in the last course",
        x = "Estimated Mean difference",
        y = "Degrees") +
     theme_minimal()
@@ -386,20 +403,40 @@ emmeans(anova, ~ Degree | Course) |>
 
 In the last course, there are significant differences between nursing and physiotherapy, medicine and nursing, pharmacy and physiotherapy and medicine and nursing.
 
+```{r}
+marginal_means|> 
+    eff_size(sigma = sigma(anova), edf = 708, by = "Course") |> 
+    as_tibble() |>
+    arrange(Course, desc(abs(effect.size))) |>
+    kable()
+```
+
+The biggest effect size detected was between Physiotherapy and Nursing, followed by Medicine and Nursing, Physiotherapy and Pharmacy and Medicine and Pharmacy, all of them with an effect size d>0.5. 
+
 In the same way, we compare the courses for each degree.
 
 ```{r}
-emmeans(anova, ~ Course | Degree) |> 
-    pairs() |> 
+marginal_means |> 
+    pairs(infer = T, by = "Degree") |> 
     as_tibble() |> 
     arrange(p.value) |> 
     kable()
 ```
 
 ```{r}
-emmeans(anova, ~ Course | Degree) |> 
-    pairs() |> 
-    confint() |> 
+pwpp(marginal_means, by = "Degree") +
+    labs(title = "P-values of comparisons of the RNPQ means\nof first and last courses by dregee")
+```
+
+```{r}
+plot(marginal_means, by = "Degree", comparisons = TRUE) +
+    labs(title = "95% confidence intervals for the estimated means\nof RNPQ scores and pairwise comparisons", x = "Estimated means") +
+    theme_minimal()
+```
+
+```{r}
+marginal_means|> 
+    pairs(infer = T, by = "Degree") |>
     as_tibble() |> 
     mutate(Degree = reorder(Degree, estimate)) |> 
     ggplot(aes(x = estimate, y = Degree)) +
@@ -414,8 +451,13 @@ emmeans(anova, ~ Course | Degree) |>
 
 There are significant differences between the first and the last courses in medicine, pharmacy and physiotherapy, but not in nursing.
 
-<!-- ### Aligned ranks transformation ANOVA -->
-
+```{r}
+marginal_means|> 
+    eff_size(sigma = sigma(anova), edf = 708, by = "Degree") |> 
+    as_tibble() |>
+    arrange(desc(abs(effect.size))) |>
+    kable()
+```
 
 ## Comparison of HC-PAIRS scores
 
@@ -435,14 +477,21 @@ The ANOVA test shows both, the degree and the course, have a statistically signi
 
 Now we study the residuals of the model to check the ANOVA assumptions are meet.
 
+```{r}
+# Add residuals and fitted scores to the data frame.
+df <- df |> mutate(
+    predictions = fitted(anova),
+    residuals = residuals(anova)
+)
+```
+
 First we check normality of residuals.
 
 ```{r}
-residuals <- residuals(anova)
 par(mfrow = c(1, 2))  
-hist(residuals)
-qqnorm(residuals, main = "Q-Q Plot of Residuals")
-qqline(residuals, col = "red", lwd = 2)
+hist(df$residuals)
+qqnorm(df$residuals, main = "Q-Q Plot of Residuals")
+qqline(df$residuals, col = "red", lwd = 2)
 ```
 
 According to the charts there is no significant departure from normality.
@@ -457,12 +506,19 @@ leveneTest(HC_PAIRS ~ Degree * Course, data = df) |>
 
 The variances of the scores of the HC_PAIRS questionnaire are homogeneous in all the degree-course groups (p-value > 0.05).
 
-### Post-hoc test
+```{r}
+par(mfrow = c(1,1))
+plot(anova, which=1)
+```
+
+The scatter plot of residuals vs predicted scores shows homogeneity of variances.
+
+### Pairwise comparison of means
 
 As the interaction of degree and course is significant, we estimate the mean for each degree-course group.
 
 ```{r}
-marginal_means <- emmeans(anova, ~ Degree * Course)
+marginal_means <- emmeans(anova, specs =  ~ Degree:Course, weights = "cells")
 marginal_means |> 
     tidy(conf.int = TRUE) |> 
     select(-statistic, -p.value) |> 
@@ -487,7 +543,7 @@ marginal_means |>
 Now we compare the means of all the groups by pairs.
 
 ```{r}
-pairs(marginal_means) |>
+contrast(marginal_means, method = "pairwise") |>
     as_tibble() |> 
     arrange(p.value) |> 
     kable()
@@ -496,7 +552,7 @@ pairs(marginal_means) |>
 As many of this comparisons make no sense, we perform a pairwise comparison of degrees by course.
 
 ```{r}
-emmeans(anova, ~ Degree | Course) |> 
+emmeans(anova, ~ Degree | Course, weights = "cells") |> 
     pairs() |> 
     as_tibble() |> 
     arrange(Course, p.value) |> 
@@ -544,7 +600,11 @@ In the last course, there are significant differences between pharmacy and physi
 In the same way, we compare the courses for each degree.
 
 ```{r}
-emmeans(anova, ~ Course | Degree) |> 
+contrast(marginal_means, method = "pairwise", by = "Degree", adjust = "tukey")
+```
+
+```{r}
+emmeans(anova, ~ Course | Degree, weights = "cells") |> 
     pairs() |> 
     as_tibble() |> 
     arrange(p.value) |> 

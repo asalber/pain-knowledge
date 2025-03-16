@@ -1,0 +1,91 @@
+---
+title: Study about pain knowledge and attitudes among students in health sciences degrees
+date: today
+execute: 
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+# Packages loading.
+library(tidyverse)
+library(knitr)
+library(broom)
+library(vtable)
+library(tidymodels)
+library(ggpubr)
+library(car)
+library(rstatix)
+library(emmeans)
+library(patchwork)
+```
+
+```{r}
+# Data loading.
+df <- read_csv("datos/datos-2024-11-25.csv") |>
+    # Select the variables of interest.
+    select(Degree, Course, Gender, RNPQ, HC_PAIRS, starts_with("X"), starts_with("Y")) |> 
+    # Convert the categorical variables to factors.
+    mutate(Degree = factor(Degree), Course = factor(Course), Gender = factor(Gender)) |> 
+    # Create a new variable with the combination of the degree and the course.
+    mutate(Degree_Course = interaction(Degree, Course))
+```
+
+## Materials and Methods
+
+### Study design and participants
+
+We planned a cross-sectional study including students from first and last courses of Health Sciences degrees (Medicine, Physiotherapy, Nursing and Pharmacy) at several universities of Spain. 
+
+The participants were informed about the nature of the study, agreed to participate, and provided and
+informed consent according to the data protection law currently in force. They were asked to complete two self-administered questionnaires, the Spanish version of the Reliability and Pain Knowledge Questionnaire (RNPQ) [referencia], and the Health Care Providers’ Pain and Impairment Relationship Scale (HC-PAIRS) [referencia].
+
+Inclusion and exclusion criteria.
+
+### Statistical analysis
+
+Data processing and analysis were performed with programmes R (version 3.5), RKWard
+(version 0.8.0) and rk.Teaching package (version 1.4) [1].
+
+A descriptive summary of the main variables in the study was performed by groups (degrees and courses), including the mean and standard deviation.
+
+The comparison among groups was performed using a two-factors ANOVA test where the factors were the degree and the course. The post-hoc analysis was performed using the Tukey's test. The effect size was calculated using the eta-squared statistic. The assumptions for the ANOVA test were checked: normality of residuals was proven with histogram and Q-Q plot of residuals, and the homogeneity of variances was tested with Levene’s test. We considered a significance level of $\alpha$=0.05.
+
+The required sample size was calculated with the `pwr` package in R, considering a power of 0.8 and a significance level of 0.05. The effect size was calculated using the Cohen’s d statistic assuming a medium effect size. For this requirements we got a minimum sample size of 60 participants per group.
+
+<!-- The comparison between the first and last courses was performed using the Student’s t-test for independent samples. The effect size was calculated using Cohen’s d. -->
+
+## Results
+
+We got a total of 716 participants from the four degrees. The distribution of participants by degree and course is shown in Table 1.
+
+```{r}
+#| label: tab:sample-size
+#| tbl-cap: Sample size by degree and course
+table(df$Degree, df$Course) |> 
+  kable()
+```
+
+```{r}
+table(df$Gender)
+```
+
+```{r}
+st(df, vars = c("RNPQ", "HC_PAIRS"), group = "Degree_Course", summ = c("mean(x)",   "sd(x)", "min(x)", "pctile(x)[25]", "median(x)", "pctile(x)[75]", "max(x)"), title = "Mean and standard deviation of the RNPQ and HC_PAIRS scores by degree and course")
+```
+
+```{r}
+anova <- aov(RNPQ ~ Degree * Course, data = df)
+# Use the type III sum of squares as the groups are unbalanced.
+Anova(anova, type = "III")  |> 
+    tidy() |>
+    mutate(p.value = format(p.value, scientific = TRUE, digits = 2)) |>
+    kable()
+```
+
+
+## References
+
+[1] Sánchez-Alberca, A. Bringing R to non-expert users with the package RKTeaching. Boletín de Estadística e
+Investigación Operativa (BEIO) 2015, 31, 170–188.
