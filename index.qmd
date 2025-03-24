@@ -51,7 +51,7 @@ library(patchwork)
 # Data loading.
 df <- read_csv("datos/datos-2024-11-25.csv") |>
     # Select the variables of interest.
-    select(Degree, Course, Gender, RNPQ, HC_PAIRS, starts_with("X"), starts_with("Y")) |> 
+    select(Degree, Course, Gender, Age, RNPQ, HC_PAIRS, starts_with("X"), starts_with("Y")) |> 
     # Convert the categorical variables to factors.
     mutate(Degree = factor(Degree), Course = factor(Course), Gender = factor(Gender)) |> 
     # Create a new variable with the combination of the degree and the course.
@@ -109,6 +109,11 @@ df |>
 
 ### Descriptive statistics
 
+```{r}
+df  |> 
+    summarize(`Age mean` = mean(Age), `Age sd` = sd(Age)) |>
+    kable()
+```
 #### According to the degree
 
 ```{r}
@@ -560,6 +565,17 @@ emmeans(anova, ~ Degree | Course, weights = "cells") |>
 ```
 
 ```{r}
+pwpp(marginal_means, by = "Course") +
+    labs(title = "P-values of pairwise comparisons of the HC-PAIRS means by course")
+```
+
+```{r}
+plot(marginal_means, by = "Course", comparisons = TRUE) +
+    labs(title = "95% confidence intervals for the estimated means\nof HC-PAIRS scores and pairwise comparisons", x = "Estimated means") +
+    theme_minimal()
+```
+
+```{r}
 emmeans(anova, ~ Degree | Course) |> 
     pairs() |> 
     confint() |> 
@@ -597,11 +613,19 @@ emmeans(anova, ~ Degree | Course) |>
 
 In the last course, there are significant differences between pharmacy and physiotherapy, nursing and physiotherapy, medicine and pharmacy, medicine and physiotherapy and nursing and pharmacy.
 
+```{r}
+marginal_means|> 
+    eff_size(sigma = sigma(anova), edf = 708, by = "Course") |> 
+    as_tibble() |>
+    arrange(Course, desc(abs(effect.size))) |>
+    kable()
+```
+
 In the same way, we compare the courses for each degree.
 
-```{r}
+<!-- ```{r}
 contrast(marginal_means, method = "pairwise", by = "Degree", adjust = "tukey")
-```
+``` -->
 
 ```{r}
 emmeans(anova, ~ Course | Degree, weights = "cells") |> 
@@ -609,6 +633,17 @@ emmeans(anova, ~ Course | Degree, weights = "cells") |>
     as_tibble() |> 
     arrange(p.value) |> 
     kable()
+```
+
+```{r}
+pwpp(marginal_means, by = "Degree") +
+    labs(title = "P-values of comparisons of the HC-PAIRS means\nof first and last courses by dregee")
+```
+
+```{r}
+plot(marginal_means, by = "Degree", comparisons = TRUE) +
+    labs(title = "95% confidence intervals for the estimated means\nof HC-PAIRS scores and pairwise comparisons", x = "Estimated means") +
+    theme_minimal()
 ```
 
 ```{r}
@@ -628,3 +663,12 @@ emmeans(anova, ~ Course | Degree) |>
 ```
 
 There are significant differences between the first and the last courses in pysiotherapy and medicien, but not in nursing and pharmacy.
+
+
+```{r}
+marginal_means|> 
+    eff_size(sigma = sigma(anova), edf = 708, by = "Degree") |> 
+    as_tibble() |>
+    arrange(desc(abs(effect.size))) |>
+    kable()
+```
