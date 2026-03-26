@@ -1,0 +1,218 @@
+ID,Start time,Completion time,Language,Universidad,Grado,Curso,Edad,Sexo,X1,X2,X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,RNPQ,Y1,Y2,Y3,Y4,Y5,Y6,Y7,Y8,Y9,Y10,Y11,Y12,Y13,Y14,Y15,HC_PAIRS
+4,2/7/24 17:51:14,2/7/24 17:53:55,es,Universidad de Alcalá,Fisioterapia,Último curso,21,Mujer,0,0,1,1,1,0,1,1,0,1,1,1,8,7,1,1,1,4,2,2,1,5,5,2,1,6,3,4,45
+5,2/7/24 17:50:52,2/7/24 17:57:01,es,Universidad de Alcalá,Fisioterapia,Último curso,21,Hombre,0,0,1,1,1,0,1,1,0,1,1,1,8,6,2,2,5,2,3,4,3,3,5,1,1,2,6,3,42
+6,2/7/24 17:58:15,2/7/24 18:02:12,es,Universidad de Alcalá,Fisioterapia,Último curso,21,Mujer,0,0,1,0,0,1,1,1,1,0,1,0,6,1,5,5,7,2,1,1,6,4,7,1,1,7,3,2,67
+7,2/7/24 18:41:39,2/7/24 18:47:28,es,Universidad de Alcalá,Fisioterapia,Último curso,21,Hombre,1,0,1,1,1,1,1,1,1,1,1,0,10,7,4,1,4,2,1,4,3,1,4,1,1,4,5,1,41
+8,2/7/24 20:50:29,2/7/24 20:55:18,es,Universidad de Alcalá,Fisioterapia,Último curso,21,Mujer,1,0,1,0,0,0,1,1,1,1,1,1,8,3,2,3,3,4,3,5,3,6,6,4,1,5,4,2,58
+9,2/7/24 20:57:53,2/7/24 21:03:51,es,Universidad de Alcalá,Fisioterapia,Último curso,26,Mujer,1,0,1,1,1,0,1,1,1,1,1,1,10,5,1,5,2,3,5,3,1,5,6,1,1,7,3,1,47
+10,2/7/24 21:25:03,2/7/24 21:35:52,es,Universidad de Alcalá,Fisioterapia,Último curso,21,Hombre,0,0,1,1,1,0,0,1,1,1,1,0,7,4,4,6,1,1,1,5,7,7,6,2,1,5,5,1,60
+11,2/8/24 0:27:53,2/8/24 0:31:57,es,Universidad de Alcalá,Fisioterapia,Último curso,22,Mujer,0,0,1,1,1,0,1,1,1,1,1,0,8,5,6,4,3,4,3,4,5,5,2,2,3,7,6,2,57
+12,2/7/24 22:23:29,2/8/24 9:39:51,es,Universidad de Alcalá,Fisioterapia,Último curso,24,Mujer,0,0,1,1,1,1,1,1,1,1,0,1,9,1,3,4,5,3,2,5,1,5,6,1,1,6,2,5,64
+13,2/8/24 15:24:06,2/8/24 15:32:03,es,Universidad de Alcalá,Fisioterapia,Último curso,24,Mujer,0,0,1,1,0,1,1,1,1,1,1,1,9,5,1,1,4,4,2,4,1,2,7,2,1,7,5,1,47
+14,2/8/24 18:48:12,2/8/24 19:04:55,es,Universidad de Alcalá,Fisioterapia,Último curso,21,Hombre,1,0,1,0,1,0,1,1,0,0,0,1,6,1,6,2,4,1,2,6,6,7,6,1,2,4,4,2,64
+15,2/8/24 19:13:24,2/8/24 19:19:43,es,Universidad de Alcalá,Fisioterapia,Último curso,21,Mujer,0,0,1,1,1,0,1,1,0,1,1,0,7,7,5,2,3,3,4,4,5,6,5,1,2,5,4,3,53
+16,2/8/24 22:34:18,2/8/24 22:39:35,es,Universidad de Alcalá,Fisioterapia,Último curso,21,Mujer,0,0,1,1,0,0,1,1,1,0,1,1,7,5,3,2,6,6,5,6,6,3,6,5,3,5,6,6,65
+17,2/10/24 17:47:23,2/10/24 17:52:34,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Primer curso,18,Hombre,0,0,1,1,1,0,0,1,0,0,0,1,5,5,5,3,6,1,3,2,4,5,5,1,1,5,5,5,18
+18,2/10/24 17:50:50,2/10/24 17:58:07,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Último curso,35,Mujer,0,0,1,1,1,0,0,1,0,0,1,0,5,4,5,3,3,6,2,5,2,2,6,5,2,4,5,3,17
+19,2/10/24 17:57:43,2/10/24 18:04:41,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Primer curso,19,Mujer,0,0,1,1,1,0,1,1,0,1,1,1,8,2,6,5,6,4,6,5,5,6,6,5,5,4,4,4,24
+20,2/10/24 18:14:39,2/10/24 18:19:45,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Último curso,24,Mujer,0,0,1,0,0,0,1,1,0,1,1,1,6,1,4,5,7,2,1,1,5,6,7,5,3,4,1,5,44
+21,2/10/24 19:17:13,2/10/24 19:20:39,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Primer curso,31,Mujer,0,0,1,1,1,1,1,1,0,1,1,1,9,1,7,2,1,7,2,1,1,7,7,4,6,7,2,2,61
+22,2/10/24 19:17:55,2/10/24 19:24:50,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Primer curso,20,Mujer,0,0,1,1,1,0,1,1,1,1,1,0,8,2,7,4,4,3,2,5,6,7,6,3,3,6,5,4,41
+23,2/10/24 19:34:24,2/10/24 19:37:41,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Último curso,24,Mujer,0,0,1,1,1,0,1,1,0,1,1,0,7,7,7,7,1,6,1,7,4,7,7,7,4,7,4,4,74
+24,2/10/24 21:40:54,2/10/24 21:45:57,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Primer curso,19,Hombre,1,0,1,0,1,1,0,1,1,0,1,0,7,7,7,2,5,4,2,4,5,7,7,5,6,7,6,7,52
+25,2/10/24 21:56:52,2/10/24 22:00:59,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Primer curso,21,Mujer,0,0,1,1,1,1,0,0,0,1,1,0,6,6,5,3,5,7,4,5,5,3,6,6,3,5,6,3,15
+26,2/10/24 22:20:13,2/10/24 22:23:47,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Último curso,21,Mujer,0,0,1,1,1,0,1,1,0,0,1,0,6,5,7,4,2,6,1,4,5,4,7,5,4,4,3,4,53
+27,2/11/24 1:35:23,2/11/24 1:40:38,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Primer curso,40,Mujer,0,0,1,1,1,1,0,0,0,1,1,1,7,7,5,3,7,4,3,6,7,7,7,7,5,7,5,4,59
+28,2/11/24 8:45:03,2/11/24 8:49:12,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Último curso,22,Mujer,0,0,1,0,1,1,0,1,0,1,1,1,7,3,6,7,6,5,4,5,7,6,6,5,5,4,4,5,31
+29,2/11/24 10:48:34,2/11/24 10:52:01,es,Universidad CEU Cardenal Herrera,Fisioterapia,Primer curso,19,Hombre,0,0,1,1,1,1,1,1,0,1,1,0,8,4,5,2,5,7,4,5,6,6,6,4,1,4,1,2,68
+30,2/11/24 18:19:51,2/11/24 18:28:56,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Primer curso,28,Mujer,1,0,1,1,1,1,1,1,1,1,1,1,11,6,5,6,6,4,3,4,6,5,3,4,3,3,5,4,26
+31,2/11/24 20:48:37,2/11/24 20:56:15,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Primer curso,18,Mujer,1,0,1,1,1,0,1,1,0,1,1,1,9,1,7,7,4,4,1,4,7,7,7,4,7,7,1,7,93
+32,2/12/24 6:41:46,2/12/24 6:46:47,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Último curso,23,Hombre,0,0,1,0,1,1,0,1,1,1,1,0,7,1,6,6,4,5,7,3,7,7,7,4,5,7,7,7,52
+33,2/12/24 8:15:07,2/12/24 8:24:18,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Primer curso,19,Mujer,0,0,1,1,1,0,0,0,0,1,1,1,6,4,6,3,6,4,5,4,6,6,4,4,5,6,6,4,29
+34,2/12/24 9:31:02,2/12/24 9:36:38,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,18,Mujer,0,0,1,1,1,0,0,1,1,1,1,0,7,5,6,5,2,5,2,5,5,7,6,4,1,7,6,1,65
+35,2/12/24 9:36:43,2/12/24 9:40:59,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,18,Hombre,0,0,1,1,0,0,0,0,0,1,0,0,3,3,4,7,6,3,5,4,6,4,4,1,1,4,4,4,60
+36,2/12/24 9:42:46,2/12/24 9:49:12,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,18,Hombre,1,0,1,1,1,0,1,1,0,0,1,1,8,5,6,4,6,2,1,2,7,7,4,2,1,6,5,3,63
+37,2/12/24 9:42:26,2/12/24 9:50:01,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,18,Hombre,1,0,1,1,0,0,0,1,1,0,1,1,7,4,6,2,4,4,3,4,6,4,4,4,2,4,4,4,61
+38,2/12/24 9:45:31,2/12/24 9:51:46,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,21,Hombre,1,0,1,1,1,0,0,1,0,1,1,1,8,7,4,4,3,4,3,4,3,5,4,4,3,4,4,4,56
+39,2/12/24 9:48:11,2/12/24 9:54:08,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,18,Mujer,0,0,1,1,1,1,0,1,1,1,1,0,8,5,2,4,3,5,3,6,2,2,2,5,6,3,3,4,57
+40,2/12/24 9:46:51,2/12/24 9:54:54,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,19,Mujer,1,0,0,1,1,0,0,1,0,1,1,0,6,7,1,4,4,4,1,4,7,4,4,1,1,4,7,4,51
+41,2/12/24 9:53:41,2/12/24 9:57:52,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,19,Mujer,0,0,1,1,1,1,0,1,0,1,1,0,7,5,6,4,5,3,4,4,5,5,7,3,1,7,5,2,62
+42,2/12/24 9:55:08,2/12/24 9:58:39,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,19,Hombre,0,0,1,1,1,1,0,1,0,1,1,0,7,1,5,4,7,1,2,6,7,1,7,4,3,7,7,4,70
+43,2/12/24 10:04:35,2/12/24 10:10:12,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,18,Mujer,0,0,1,1,1,1,0,0,0,1,0,1,6,7,7,7,4,4,4,7,7,7,7,4,4,7,4,7,81
+44,2/12/24 10:18:45,2/12/24 10:23:20,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,21,Hombre,0,0,1,1,0,1,0,0,0,0,1,1,5,5,4,5,5,5,5,5,5,5,5,3,3,5,3,5,66
+45,2/12/24 10:27:32,2/12/24 10:35:02,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,19,Hombre,1,0,1,1,1,0,0,1,1,1,1,0,8,3,6,6,5,2,2,4,6,3,6,1,2,6,6,3,63
+46,2/12/24 10:41:00,2/12/24 10:46:56,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,18,Mujer,0,0,1,0,1,1,0,1,0,0,1,0,5,3,5,2,4,5,2,5,4,5,6,5,4,4,5,3,66
+47,2/12/24 9:31:05,2/12/24 11:09:20,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,18,Hombre,0,0,1,1,1,1,1,1,0,1,1,0,8,4,6,4,6,3,2,5,3,2,5,2,2,5,5,2,58
+48,2/12/24 11:04:33,2/12/24 11:11:01,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,19,Mujer,1,0,1,1,1,0,1,1,0,1,1,0,8,4,6,7,7,7,3,6,6,4,7,5,4,5,5,5,81
+49,2/12/24 11:16:02,2/12/24 11:19:42,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,18,Mujer,1,0,1,1,1,0,0,0,0,1,0,1,6,2,5,6,4,6,3,4,5,7,7,4,2,5,2,6,78
+50,2/12/24 11:22:30,2/12/24 11:26:28,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,18,Mujer,0,0,1,1,0,1,0,1,0,1,1,0,6,2,6,5,5,3,2,5,4,7,7,2,3,5,3,2,71
+51,2/12/24 11:18:41,2/12/24 11:26:53,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Primer curso,21,Mujer,1,0,1,1,1,1,0,0,0,0,1,1,7,1,7,7,7,7,3,3,7,7,7,6,7,6,3,7,80
+52,2/12/24 11:19:22,2/12/24 11:28:27,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,18,Hombre,1,0,1,0,1,1,0,1,1,1,1,0,8,4,7,2,2,1,1,5,7,4,6,5,1,2,4,1,58
+53,2/12/24 12:54:36,2/12/24 12:57:55,"Español (España, alfabetización internacional)",Universidad Complutense de Madrid,Enfermería,Primer curso,21,Mujer,0,0,1,0,0,1,0,1,1,1,1,0,6,5,5,3,3,6,3,3,5,2,4,2,3,3,4,5,16
+54,2/12/24 12:58:15,2/12/24 13:03:21,"Español (España, alfabetización internacional)",Universidad Complutense de Madrid,Enfermería,Primer curso,18,Mujer,0,0,1,0,0,0,1,1,0,0,1,0,4,1,4,5,3,3,1,4,3,7,6,3,5,5,2,3,35
+55,2/12/24 12:58:30,2/12/24 13:05:45,"Español (España, alfabetización internacional)",Universidad Complutense de Madrid,Enfermería,Primer curso,18,Mujer,1,1,1,1,1,1,1,1,1,1,1,1,12,3,3,4,6,5,3,5,7,5,6,4,3,5,4,2,29
+56,2/12/24 12:59:21,2/12/24 13:05:57,"Español (España, alfabetización internacional)",Universidad Complutense de Madrid,Enfermería,Primer curso,19,Mujer,0,0,1,1,1,1,1,1,0,1,1,0,8,4,5,4,4,5,3,5,6,6,5,4,4,4,5,4,36
+57,2/12/24 12:58:29,2/12/24 13:06:58,"Español (España, alfabetización internacional)",Universidad Complutense de Madrid,Enfermería,Primer curso,19,Mujer,0,0,1,0,0,0,0,1,0,0,1,0,3,4,5,3,4,4,2,4,5,5,5,4,3,5,4,3,30
+58,2/12/24 13:52:03,2/12/24 13:57:51,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,18,Mujer,1,0,1,0,0,1,0,1,0,1,1,0,6,4,3,1,2,5,1,3,1,5,6,2,4,5,3,4,57
+59,2/12/24 14:02:37,2/12/24 14:12:47,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,18,Mujer,1,0,1,1,1,0,0,1,0,1,1,0,7,5,4,2,1,1,5,5,3,3,3,1,2,3,5,2,39
+60,2/12/24 14:16:15,2/12/24 14:21:16,"Español (España, alfabetización internacional)",Universidad Complutense de Madrid,Enfermería,Primer curso,18,Mujer,0,0,1,1,1,0,1,1,0,0,1,1,7,2,6,5,2,5,3,5,7,6,6,5,5,5,5,3,21
+61,2/12/24 14:36:42,2/12/24 14:45:25,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,19,Mujer,1,0,1,1,1,0,0,0,0,0,0,0,4,5,7,4,4,5,5,4,5,3,3,3,2,2,5,4,55
+62,2/12/24 16:34:31,2/12/24 16:38:26,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Farmacia,Primer curso,18,Mujer,0,0,1,0,0,0,1,1,0,1,1,0,5,3,5,4,6,3,3,3,6,5,4,3,4,3,4,3,26
+63,2/12/24 16:38:40,2/12/24 16:43:27,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Último curso,28,Mujer,0,0,1,1,0,0,0,0,1,0,0,0,3,6,7,5,7,5,4,3,6,4,6,3,2,2,5,3,27
+64,2/12/24 16:48:48,2/12/24 16:52:22,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Último curso,22,Mujer,1,0,1,0,1,0,0,1,0,0,1,0,5,2,5,6,3,4,1,4,3,5,6,2,1,2,6,5,24
+65,2/12/24 16:50:57,2/12/24 16:55:44,"Español (España, alfabetización internacional)",Universidad Complutense de Madrid,Enfermería,Primer curso,18,Hombre,1,0,1,1,1,1,0,1,1,1,1,1,10,4,6,5,3,7,4,5,4,4,5,7,7,5,6,4,43
+66,2/12/24 17:05:57,2/12/24 17:11:33,English (United States)‎,Universidad CEU Cardenal Herrera,Farmacia,Último curso,27,Mujer,0,0,1,0,1,0,1,0,0,1,1,0,5,3,6,3,5,3,1,5,6,5,7,3,3,6,2,5,25
+67,2/12/24 17:13:20,2/12/24 17:19:14,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,18,Mujer,0,0,1,1,1,0,1,1,0,0,1,1,7,5,7,2,3,5,6,7,1,3,7,4,2,7,3,3,61
+68,2/12/24 18:05:06,2/12/24 18:09:44,"Español (España, alfabetización internacional)",Universidad Complutense de Madrid,Enfermería,Primer curso,18,Mujer,0,0,1,1,1,0,0,1,0,0,1,0,5,1,7,2,4,3,2,5,5,5,5,1,1,4,3,3,35
+69,2/12/24 13:13:30,2/12/24 18:13:23,"Español (España, alfabetización internacional)",Universidad Complutense de Madrid,Enfermería,Primer curso,19,Mujer,0,0,1,1,1,0,1,1,1,0,1,1,8,5,7,6,7,6,5,5,7,6,6,5,5,6,7,5,28
+70,2/12/24 18:49:58,2/12/24 18:55:22,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Farmacia,Último curso,23,Mujer,0,0,1,1,1,0,0,1,0,1,1,1,7,7,7,4,7,4,7,7,7,7,4,1,3,2,7,7,58
+71,2/12/24 21:14:09,2/12/24 21:18:10,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,18,Mujer,0,0,1,1,1,0,0,0,1,0,1,0,5,5,3,5,6,3,4,5,3,2,6,4,1,5,5,3,56
+72,2/12/24 21:48:05,2/12/24 21:53:26,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,25,Mujer,0,0,1,1,1,0,1,1,0,1,1,1,8,7,4,2,4,4,7,5,5,7,6,4,4,7,3,6,65
+73,2/12/24 22:05:56,2/12/24 22:25:56,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Primer curso,49,Mujer,0,0,1,0,0,0,0,1,0,0,1,0,3,1,7,7,7,6,2,5,7,7,5,6,6,5,3,3,53
+74,2/13/24 9:21:21,2/13/24 9:27:01,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Medicina,Primer curso,18,Mujer,0,0,1,0,1,1,0,1,1,0,1,1,7,6,4,1,6,3,3,5,5,6,6,5,2,6,6,3,14
+75,2/13/24 9:05:55,2/13/24 10:00:53,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Medicina,Primer curso,19,Mujer,0,0,1,1,0,0,0,1,0,0,1,0,4,2,6,5,4,4,2,4,4,6,6,4,4,5,4,3,40
+76,2/13/24 10:04:52,2/13/24 10:10:29,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Medicina,Último curso,23,Mujer,1,0,1,1,1,1,1,1,0,0,1,0,8,3,3,2,6,5,3,5,3,5,6,4,3,5,5,3,17
+77,2/13/24 10:07:20,2/13/24 10:12:41,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Medicina,Primer curso,18,Mujer,0,0,1,0,0,0,0,1,1,0,1,1,5,4,6,5,4,2,4,5,6,7,6,4,2,4,5,2,30
+78,2/13/24 10:38:34,2/13/24 10:45:04,es,Universidad CEU Cardenal Herrera,Fisioterapia,Primer curso,18,Hombre,0,0,1,0,0,0,1,1,0,1,1,1,6,5,6,7,3,3,2,6,7,7,4,3,3,4,5,5,70
+79,2/13/24 10:37:34,2/13/24 10:45:32,es,Universidad CEU Cardenal Herrera,Fisioterapia,Primer curso,21,Mujer,1,0,0,1,1,1,0,1,0,0,1,0,6,1,7,7,6,5,7,6,7,7,7,4,4,7,6,2,79
+80,2/13/24 10:48:49,2/13/24 10:55:03,es,Universidad CEU Cardenal Herrera,Fisioterapia,Primer curso,39,Mujer,1,0,1,1,1,0,1,1,0,1,1,0,8,2,1,1,7,1,2,4,7,6,5,2,2,5,6,5,60
+81,2/13/24 11:07:10,2/13/24 11:13:26,es,Universidad CEU Cardenal Herrera,Fisioterapia,Primer curso,23,Hombre,0,0,1,0,0,1,1,1,0,1,1,0,6,3,3,4,3,1,1,2,7,5,5,1,2,7,6,6,60
+82,2/13/24 11:11:43,2/13/24 11:16:57,es,Universidad CEU Cardenal Herrera,Fisioterapia,Primer curso,18,Mujer,0,0,1,1,1,0,0,1,0,1,1,1,7,4,4,4,3,5,3,3,5,5,6,3,3,4,3,3,62
+83,2/13/24 11:15:33,2/13/24 11:23:07,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Medicina,Último curso,23,Mujer,0,0,1,0,1,0,1,1,0,1,1,0,6,5,3,3,6,2,1,4,2,7,4,1,2,3,6,1,29
+84,2/13/24 11:14:55,2/13/24 11:23:18,es,Universidad CEU Cardenal Herrera,Fisioterapia,Primer curso,19,Mujer,0,0,1,1,1,0,1,1,1,1,1,1,9,4,3,5,7,4,5,4,4,3,6,4,4,6,5,2,62
+85,2/13/24 11:17:34,2/13/24 11:26:51,es,Universidad CEU Cardenal Herrera,Fisioterapia,Primer curso,49,Hombre,0,0,1,1,1,1,1,1,0,1,1,1,9,4,5,3,5,7,4,4,1,7,6,5,1,3,6,2,59
+86,2/13/24 12:12:26,2/13/24 12:19:42,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,21,Mujer,1,0,1,0,1,0,0,1,1,1,1,1,8,5,6,3,5,4,2,4,6,5,6,2,4,5,5,6,68
+87,2/13/24 12:12:46,2/13/24 12:19:43,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,20,Mujer,1,0,1,0,1,0,0,1,1,1,1,1,8,5,5,3,5,4,2,4,6,5,6,2,4,5,6,6,66
+88,2/13/24 13:16:56,2/13/24 13:25:29,es,Universidad CEU Cardenal Herrera,Fisioterapia,Primer curso,45,Hombre,0,0,1,1,1,1,0,1,1,0,1,1,8,1,7,7,7,7,1,7,7,7,7,7,1,7,4,7,96
+89,2/13/24 10:45:51,2/13/24 13:44:46,es,Universidad CEU Cardenal Herrera,Fisioterapia,Último curso,26,Mujer,0,0,1,1,1,0,1,1,1,1,1,1,9,2,3,1,6,6,2,4,3,1,6,5,1,5,3,3,61
+90,2/13/24 13:46:53,2/13/24 13:51:47,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Farmacia,Primer curso,22,Mujer,0,0,1,1,1,1,0,1,1,1,1,1,9,7,5,5,4,4,4,4,4,7,6,4,4,5,5,5,39
+91,2/13/24 14:02:26,2/13/24 14:06:09,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,18,Mujer,0,0,1,1,0,0,1,1,1,1,1,0,7,2,6,4,4,6,5,5,5,5,6,5,2,5,5,5,70
+92,2/13/24 15:09:45,2/13/24 15:28:30,es,Universidad CEU Cardenal Herrera,Fisioterapia,Primer curso,19,Mujer,0,0,1,0,1,0,0,1,1,0,1,1,6,3,4,3,3,3,4,4,5,3,6,3,2,5,3,2,57
+93,2/13/24 15:13:33,2/13/24 15:32:51,es,Universidad CEU Cardenal Herrera,Fisioterapia,Último curso,24,Hombre,0,0,1,1,1,0,1,1,1,1,1,1,9,3,4,3,1,1,2,4,3,4,7,5,5,4,6,3,57
+94,2/13/24 15:42:59,2/13/24 15:46:06,es,Universidad CEU San Pablo,Fisioterapia,Primer curso,18,Mujer,0,0,1,1,1,0,1,1,1,0,1,1,8,5,5,5,4,3,5,3,6,6,3,6,3,4,4,4,62
+95,2/13/24 15:53:50,2/13/24 15:59:09,es,Universidad CEU Cardenal Herrera,Fisioterapia,Primer curso,18,Hombre,1,0,1,1,1,0,0,1,0,0,1,1,7,5,7,6,3,5,5,6,7,7,6,4,1,6,6,5,71
+96,2/13/24 16:10:09,2/13/24 16:21:36,es,Universidad CEU Cardenal Herrera,Fisioterapia,Primer curso,19,Hombre,0,0,1,0,1,1,0,0,1,0,0,1,5,4,5,5,5,6,5,4,6,4,5,4,4,3,3,5,68
+97,2/13/24 16:29:39,2/13/24 16:36:44,"Español (España, alfabetización internacional)",Universidad Complutense de Madrid,Enfermería,Primer curso,18,Mujer,0,0,1,0,0,0,0,1,0,0,0,0,2,4,4,4,4,4,4,4,4,2,4,4,1,2,5,1,45
+98,2/13/24 17:26:34,2/13/24 17:31:42,es,Universidad de Alcalá,Fisioterapia,Último curso,24,Mujer,0,0,1,1,1,0,1,1,1,1,1,0,8,7,5,2,2,2,2,3,2,2,2,1,1,2,6,2,35
+99,2/13/24 17:42:51,2/13/24 17:48:20,es,Universidad CEU Cardenal Herrera,Fisioterapia,Último curso,27,Mujer,0,0,1,1,1,1,0,1,0,1,1,1,8,7,7,5,7,4,3,6,7,7,6,5,5,6,5,6,80
+100,2/13/24 19:43:27,2/13/24 19:47:56,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,18,Mujer,0,0,1,0,0,1,0,1,0,1,1,1,6,3,6,4,6,6,2,4,5,6,7,4,5,5,5,5,77
+101,2/14/24 7:10:02,2/14/24 7:20:10,es,Universidad CEU Cardenal Herrera,Fisioterapia,Último curso,36,Mujer,0,0,1,1,1,1,1,1,1,1,1,1,10,7,4,5,5,2,4,5,5,7,6,4,2,6,5,7,66
+102,2/14/24 11:54:37,2/14/24 11:57:50,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,19,Mujer,0,0,0,1,1,1,1,1,1,0,1,0,7,2,3,4,2,4,4,4,6,4,6,2,2,5,2,2,60
+103,2/14/24 13:23:28,2/14/24 13:35:29,en,Universidad CEU Cardenal Herrera,Fisioterapia,Primer curso,18,Mujer,0,0,1,1,1,1,1,0,1,1,1,1,9,2,6,4,4,5,2,5,7,6,5,6,5,5,4,5,79
+104,2/14/24 18:21:52,2/14/24 18:30:47,"Español (España, alfabetización internacional)",Universidad Complutense de Madrid,Enfermería,Primer curso,24,Mujer,1,0,1,0,0,1,1,1,0,0,1,0,6,7,7,3,4,4,1,4,4,4,7,4,3,7,5,1,57
+105,2/14/24 18:46:59,2/14/24 18:52:55,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,19,Hombre,0,0,1,1,1,0,0,1,0,0,1,1,6,3,6,4,5,5,1,5,3,7,6,5,3,5,6,3,71
+106,2/14/24 20:04:45,2/14/24 20:10:14,es,Universidad Complutense de Madrid,Fisioterapia,Último curso,21,Hombre,0,0,1,1,1,1,1,1,1,1,1,1,10,5,6,5,7,4,5,7,6,7,7,4,3,7,6,5,76
+107,2/14/24 22:59:03,2/14/24 23:15:20,es,Universidad CEU Cardenal Herrera,Fisioterapia,Último curso,23,Mujer,0,0,1,1,0,0,0,1,0,1,1,0,5,6,5,2,3,4,5,4,5,2,7,3,2,7,7,3,53
+108,2/14/24 23:19:52,2/14/24 23:24:07,es,Universidad Complutense de Madrid,Fisioterapia,Último curso,21,Mujer,0,0,1,1,1,1,1,1,1,1,1,1,10,2,1,2,5,6,4,5,2,3,6,3,1,7,4,4,59
+109,2/14/24 23:59:14,2/15/24 0:03:41,"Español (España, alfabetización internacional)",Universidad Complutense de Madrid,Enfermería,Primer curso,21,Mujer,0,0,1,1,1,1,0,1,1,1,1,1,9,4,6,5,6,5,4,3,4,6,6,5,4,4,6,7,29
+110,2/15/24 0:04:20,2/15/24 0:08:25,es,Universidad Complutense de Madrid,Fisioterapia,Primer curso,22,Mujer,0,0,1,1,1,0,1,1,1,0,1,0,7,3,5,3,3,4,3,4,3,7,7,4,6,6,4,3,69
+111,2/15/24 7:24:58,2/15/24 7:31:42,es,Universidad Complutense de Madrid,Fisioterapia,Último curso,21,Mujer,1,0,1,1,1,1,1,1,1,1,1,1,11,6,1,4,1,4,4,3,1,4,7,1,1,7,4,1,45
+112,2/15/24 13:38:52,2/15/24 13:44:51,es,Universidad Complutense de Madrid,Fisioterapia,Último curso,22,Mujer,1,0,1,1,1,0,0,1,0,0,1,1,7,6,2,2,1,3,5,4,3,5,6,2,1,1,1,2,44
+113,2/15/24 15:01:23,2/15/24 15:11:04,es,Universidad Complutense de Madrid,Fisioterapia,Último curso,21,Mujer,0,0,1,0,1,0,1,1,1,1,1,0,7,1,5,2,6,1,6,4,5,1,6,1,1,7,4,2,54
+114,2/15/24 20:05:27,2/15/24 20:11:30,"Español (España, alfabetización internacional)",Universidad Complutense de Madrid,Enfermería,Primer curso,18,Mujer,0,0,1,0,0,0,0,1,0,1,1,1,5,6,3,1,3,1,5,7,3,2,5,3,3,5,3,3,19
+115,2/16/24 15:53:06,2/16/24 15:58:18,es,Universidad CEU Cardenal Herrera,Fisioterapia,Último curso,29,Hombre,0,0,1,1,1,0,0,1,1,1,1,0,7,4,7,4,4,4,1,4,5,7,6,6,4,4,5,4,73
+116,2/16/24 20:01:58,2/16/24 20:05:34,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Último curso,26,Hombre,1,0,0,0,0,0,1,1,0,0,1,1,5,5,6,6,5,4,3,5,7,5,6,3,6,6,4,4,27
+117,2/16/24 20:02:13,2/16/24 20:06:20,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Último curso,21,Hombre,0,0,1,1,1,1,0,1,1,1,1,0,8,7,7,7,1,4,1,7,7,7,7,1,1,7,7,1,66
+118,2/16/24 20:01:49,2/16/24 20:06:32,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Último curso,21,Mujer,0,0,1,1,1,1,0,1,1,1,1,0,8,5,6,6,1,7,1,6,5,7,6,3,5,6,4,5,29
+119,2/16/24 20:02:00,2/16/24 20:10:30,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Primer curso,19,Mujer,1,0,1,1,1,0,0,0,0,1,1,0,6,2,5,7,3,4,1,5,7,5,7,5,7,7,5,7,62
+120,2/16/24 20:17:47,2/16/24 20:24:57,"Español (España, alfabetización internacional)",Universidad CEU San Pablo,Enfermería,Primer curso,24,Mujer,0,0,1,0,1,1,1,1,0,1,1,0,7,1,1,2,3,3,1,4,7,7,7,3,2,6,4,6,44
+121,2/16/24 20:08:27,2/16/24 20:29:18,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Primer curso,18,Mujer,0,0,1,1,1,1,0,0,0,0,1,0,5,2,6,6,2,1,2,7,7,2,5,4,2,3,5,4,38
+122,2/16/24 20:50:28,2/16/24 21:06:34,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Último curso,25,Mujer,0,0,1,1,1,1,1,0,1,1,1,1,9,6,7,3,7,5,7,3,7,5,6,5,6,5,4,5,28
+123,2/16/24 21:10:37,2/16/24 21:19:08,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Último curso,23,Hombre,0,0,1,1,1,1,0,0,0,1,1,0,6,1,7,7,1,1,1,7,7,4,4,5,7,7,4,1,71
+124,2/16/24 21:31:24,2/16/24 21:36:43,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Último curso,29,Mujer,1,0,0,1,1,1,0,1,0,0,1,1,7,5,4,7,7,7,1,5,4,7,7,1,2,7,3,6,66
+125,2/17/24 11:10:57,2/17/24 11:20:09,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Primer curso,30,Hombre,0,0,1,1,1,1,0,1,1,1,1,0,8,1,7,7,7,4,1,7,7,7,7,5,5,7,7,1,76
+126,2/17/24 13:28:27,2/17/24 13:33:50,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Primer curso,21,Mujer,0,0,1,1,1,0,1,1,1,1,1,0,8,6,7,5,6,6,2,5,7,6,6,4,5,6,3,3,31
+127,2/18/24 0:08:04,2/18/24 0:16:50,es,Universidad CEU Cardenal Herrera,Fisioterapia,Primer curso,22,Mujer,1,0,1,1,0,1,0,1,1,0,1,1,8,6,6,3,4,7,4,4,6,7,7,5,4,7,5,4,73
+128,2/19/24 10:31:24,2/19/24 10:38:22,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Primer curso,18,Hombre,0,0,1,1,1,0,0,1,0,1,1,1,7,3,6,5,7,4,5,5,7,1,6,5,3,6,5,5,30
+129,2/19/24 12:23:36,2/19/24 12:28:20,"Español (España, alfabetización internacional)",Universidad CEU Cardenal Herrera,Enfermería,Primer curso,20,Mujer,0,0,1,0,1,1,0,1,1,1,1,1,8,4,6,4,4,4,4,4,6,5,6,4,3,3,5,6,31
+130,2/21/24 10:26:01,2/21/24 10:31:18,"Español (España, alfabetización internacional)",Universidad CEU San Pablo,Farmacia,Último curso,24,Mujer,0,0,1,1,0,0,1,1,0,1,1,1,7,3,3,4,7,4,2,4,3,3,5,2,1,5,6,5,33
+131,2/21/24 10:57:22,2/21/24 11:03:37,en,Universidad CEU San Pablo,Fisioterapia,Último curso,24,Mujer,0,0,1,1,1,0,1,1,1,1,1,0,8,5,2,5,3,5,2,4,3,3,6,4,2,6,3,2,59
+132,2/21/24 11:07:05,2/21/24 11:12:59,en,Universidad CEU San Pablo,Fisioterapia,Último curso,22,Mujer,1,0,1,1,1,0,0,0,1,1,1,0,7,5,5,6,3,4,4,5,4,5,5,3,3,7,6,2,61
+133,2/21/24 12:11:26,2/21/24 12:15:39,"Español (España, alfabetización internacional)",Universidad CEU San Pablo,Medicina,Último curso,24,Mujer,0,0,1,0,1,0,1,1,1,0,1,0,6,3,5,6,7,6,4,4,3,5,5,5,4,5,3,3,29
+134,2/21/24 12:22:52,2/21/24 12:30:50,"Español (España, alfabetización internacional)",Universidad CEU San Pablo,Farmacia,Último curso,23,Hombre,0,0,1,1,0,0,0,1,0,0,1,0,4,1,7,4,3,5,1,4,7,5,4,3,2,4,4,2,48
+135,2/21/24 12:29:04,2/21/24 12:32:47,"Español (España, alfabetización internacional)",Universidad CEU San Pablo,Medicina,Último curso,23,Hombre,1,0,1,1,1,0,1,1,1,0,1,1,9,5,3,1,4,2,4,3,2,3,3,2,3,3,7,1,14
+136,2/21/24 12:33:27,2/21/24 12:37:18,"Español (España, alfabetización internacional)",Universidad CEU San Pablo,Medicina,Primer curso,18,Mujer,0,0,1,0,1,0,1,1,0,1,1,1,7,3,6,4,3,6,1,5,6,3,4,2,3,4,5,1,28
+137,2/21/24 12:31:06,2/21/24 12:37:42,en,Universidad CEU San Pablo,Fisioterapia,Último curso,23,Mujer,1,0,1,1,1,0,1,0,1,1,1,1,9,5,3,3,3,4,3,3,5,5,6,4,3,5,5,3,58
+138,2/21/24 15:04:43,2/21/24 15:08:55,"Español (España, alfabetización internacional)",Universidad CEU San Pablo,Medicina,Primer curso,19,Mujer,0,0,1,1,0,0,0,1,1,1,1,1,7,2,7,4,2,1,1,4,7,4,6,5,1,3,5,1,45
+139,2/21/24 15:34:48,2/21/24 15:50:33,es,Universidad CEU San Pablo,Fisioterapia,Último curso,23,Mujer,0,0,1,1,0,1,1,1,1,1,1,0,8,2,3,3,2,4,4,5,1,2,5,5,2,4,5,3,52
+140,2/21/24 16:31:38,2/21/24 16:38:07,"Español (España, alfabetización internacional)",Universidad CEU San Pablo,Farmacia,Primer curso,18,Mujer,1,0,1,1,1,0,1,0,0,1,0,0,6,2,5,6,4,6,1,4,7,7,7,3,7,4,7,7,61
+141,2/21/24 17:58:12,2/21/24 18:07:26,en,Universidad CEU San Pablo,Fisioterapia,Último curso,24,Hombre,1,1,1,1,1,1,1,1,1,1,1,1,12,3,2,4,4,5,4,3,2,3,6,2,3,6,4,2,55
+142,2/21/24 18:54:38,2/21/24 19:00:13,English (United States)‎,Universidad CEU San Pablo,Enfermería,Primer curso,19,Mujer,1,1,1,1,1,1,1,1,1,1,1,1,12,3,5,5,5,6,2,6,5,5,6,4,4,5,4,2,23
+143,2/21/24 19:12:04,2/21/24 19:17:47,"Español (España, alfabetización internacional)",Universidad CEU San Pablo,Medicina,Primer curso,18,Mujer,0,0,1,0,0,0,1,1,0,1,1,1,6,3,6,3,1,4,4,4,6,7,5,4,4,4,4,4,45
+144,2/22/24 7:56:03,2/22/24 8:02:16,"Español (España, alfabetización internacional)",Universidad CEU San Pablo,Farmacia,Primer curso,18,Mujer,0,0,1,1,1,1,0,0,0,1,1,0,6,4,5,5,4,4,3,5,5,5,3,4,4,3,5,5,28
+145,2/22/24 8:51:27,2/22/24 9:09:35,"Español (España, alfabetización internacional)",Universidad CEU San Pablo,Enfermería,Primer curso,21,Mujer,0,0,1,0,1,0,1,1,0,0,1,1,6,2,7,6,7,6,1,1,5,7,7,3,1,7,4,6,54
+146,2/22/24 9:04:37,2/22/24 9:10:27,es,Universidad de Alcalá,Fisioterapia,Último curso,30,Mujer,1,1,1,1,1,1,1,1,1,1,1,1,12,5,1,6,3,2,1,2,1,7,6,1,2,5,5,2,51
+147,2/22/24 10:02:51,2/22/24 10:08:21,"Español (España, alfabetización internacional)",Universidad CEU San Pablo,Medicina,Primer curso,18,Hombre,1,0,1,1,0,0,0,1,0,0,1,1,6,1,7,7,5,5,2,5,6,5,6,5,4,5,4,4,39
+148,2/22/24 12:49:47,2/22/24 12:53:18,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Hombre,0,0,1,1,1,1,0,1,1,1,0,1,8,4,5,5,5,4,6,2,2,4,4,5,5,5,3,6,63
+149,2/22/24 12:50:43,2/22/24 12:55:35,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Mujer,0,0,1,1,1,1,0,1,1,0,1,1,8,1,4,4,5,5,4,4,5,6,5,4,4,5,4,5,71
+150,2/22/24 12:50:40,2/22/24 12:55:49,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Hombre,0,0,1,1,0,1,1,1,0,1,1,0,7,3,5,4,2,4,3,4,7,5,7,1,1,4,5,2,59
+151,2/22/24 12:50:35,2/22/24 12:55:58,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,19,Mujer,0,0,1,0,0,1,0,1,0,1,1,0,5,6,5,2,5,5,3,5,5,6,6,3,6,5,4,3,67
+152,2/22/24 12:51:39,2/22/24 12:56:36,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,20,Mujer,1,0,1,0,1,0,0,0,0,1,1,1,6,5,7,4,7,3,4,3,5,7,6,1,2,4,6,6,64
+153,2/22/24 12:51:33,2/22/24 12:57:38,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Mujer,0,0,1,1,1,0,1,1,0,1,1,0,7,4,2,3,3,5,4,4,5,2,5,4,2,4,6,2,51
+154,2/22/24 12:56:35,2/22/24 12:59:45,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,22,Hombre,0,0,0,1,1,0,1,1,1,0,0,0,5,4,4,3,4,2,4,6,3,2,5,4,3,6,2,6,62
+155,2/22/24 12:51:16,2/22/24 12:59:50,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Mujer,0,0,1,1,1,0,0,1,0,1,1,1,7,2,6,5,6,4,2,4,6,6,5,4,3,5,5,5,74
+156,2/22/24 12:56:54,2/22/24 13:01:23,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Hombre,0,0,1,1,0,0,0,1,1,0,1,0,5,3,6,2,4,1,2,4,5,6,7,2,3,5,2,2,64
+157,2/22/24 12:52:18,2/22/24 13:03:51,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Mujer,0,0,1,0,0,1,1,1,0,0,0,0,4,4,5,2,6,4,3,2,5,5,5,1,4,3,5,3,57
+158,2/22/24 12:53:03,2/22/24 13:06:08,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Hombre,0,0,0,1,1,0,0,0,0,0,1,0,3,3,7,4,6,3,4,5,4,5,4,5,3,6,3,3,69
+159,2/22/24 13:01:30,2/22/24 13:06:27,"Español (España, alfabetización internacional)",Universidad CEU San Pablo,Medicina,Primer curso,18,Mujer,0,0,1,0,0,0,1,1,0,1,1,1,6,6,5,3,6,6,6,4,3,6,6,6,2,5,4,2,12
+160,2/22/24 12:57:12,2/22/24 13:09:36,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,23,Mujer,0,0,1,1,1,0,1,1,1,1,1,0,8,1,6,4,6,7,1,4,6,7,5,5,4,7,2,1,82
+161,2/22/24 13:08:15,2/22/24 13:10:05,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,21,Hombre,0,0,1,0,1,0,0,0,1,1,1,1,6,5,3,5,5,5,3,5,3,3,5,3,5,3,5,3,59
+162,2/22/24 12:55:40,2/22/24 13:10:06,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Mujer,1,0,1,1,1,0,1,1,1,1,1,0,9,3,6,6,4,3,1,1,4,5,6,2,5,7,5,2,66
+163,2/22/24 12:56:15,2/22/24 13:10:06,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,19,Mujer,1,0,1,1,1,0,1,1,1,1,1,0,9,3,6,6,4,3,1,2,4,5,6,2,5,6,5,2,66
+164,2/22/24 12:52:14,2/22/24 13:11:24,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Mujer,0,1,1,1,1,0,0,1,0,1,1,0,7,2,7,5,7,3,1,4,7,6,5,2,4,5,5,1,72
+165,2/22/24 13:08:52,2/22/24 13:14:48,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Hombre,0,0,1,1,1,1,0,1,1,1,1,0,8,5,4,2,2,4,5,4,5,4,5,2,1,4,4,4,51
+166,2/22/24 13:07:31,2/22/24 13:14:57,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Hombre,0,0,1,1,1,0,0,1,0,1,1,1,7,6,7,4,5,1,2,4,7,6,6,4,4,6,1,6,75
+167,2/22/24 13:26:16,2/22/24 13:30:56,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Mujer,0,0,1,0,1,0,1,1,1,1,1,0,7,5,4,3,5,4,3,2,5,5,6,3,2,6,5,3,59
+168,2/22/24 13:28:05,2/22/24 13:31:57,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Mujer,0,0,1,0,1,0,0,1,1,0,1,0,5,4,3,5,3,2,1,3,6,3,7,2,1,6,5,4,59
+169,2/22/24 13:32:50,2/22/24 13:38:26,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,22,Hombre,1,0,0,1,1,0,0,1,1,0,1,0,6,5,1,4,4,2,4,5,2,6,4,3,3,6,4,6,57
+170,2/22/24 13:35:28,2/22/24 13:41:29,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,20,Hombre,0,0,1,1,1,0,1,1,0,1,0,1,7,1,7,4,2,4,2,3,6,1,4,4,6,6,2,2,68
+171,2/22/24 13:55:30,2/22/24 13:59:31,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Mujer,0,0,1,0,1,1,0,1,1,1,1,0,7,2,6,4,6,3,2,4,7,7,6,2,1,5,4,5,72
+172,2/22/24 13:57:32,2/22/24 14:04:04,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,19,Hombre,0,0,0,0,1,0,0,1,0,1,1,0,4,4,3,3,3,4,1,5,5,6,6,4,2,5,5,4,64
+173,2/22/24 13:55:39,2/22/24 14:06:41,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,19,Mujer,0,0,1,0,1,0,1,1,0,1,1,0,6,4,5,5,5,4,4,4,5,5,5,3,4,5,5,3,64
+174,2/22/24 14:06:03,2/22/24 14:17:08,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,22,Hombre,0,0,1,1,1,1,1,1,0,1,1,0,8,3,5,4,4,5,6,4,3,5,5,4,4,4,4,3,61
+175,2/22/24 14:06:08,2/22/24 14:26:09,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Hombre,1,0,1,0,0,0,0,1,0,0,1,0,4,2,4,3,6,3,4,4,5,5,5,3,2,4,5,5,62
+176,2/22/24 14:26:29,2/22/24 14:31:47,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Hombre,0,0,1,0,1,0,0,1,0,1,1,0,5,5,6,3,4,2,2,4,4,4,5,2,4,4,3,5,61
+177,2/22/24 14:31:06,2/22/24 14:35:05,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Hombre,0,0,1,0,0,0,0,1,0,1,1,0,4,4,3,3,5,4,1,3,7,5,7,4,1,5,3,3,66
+178,2/22/24 14:24:47,2/22/24 14:39:22,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Mujer,0,0,1,1,0,0,1,1,0,1,1,0,6,2,7,4,3,6,3,6,6,7,7,4,4,7,5,2,77
+179,2/22/24 14:26:21,2/22/24 14:39:28,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Mujer,0,0,1,1,1,0,1,1,0,1,1,1,8,2,7,4,5,6,3,6,7,7,7,4,3,7,5,1,78
+180,2/22/24 14:39:17,2/22/24 14:47:52,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Mujer,0,0,1,1,1,0,0,1,0,1,1,1,7,3,7,5,1,6,2,2,5,6,5,4,1,6,2,2,67
+181,2/22/24 14:43:28,2/22/24 14:52:01,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Mujer,0,0,1,1,1,0,0,1,0,1,1,0,6,1,7,5,2,4,2,1,7,6,7,2,5,6,3,2,72
+182,2/22/24 15:00:07,2/22/24 15:05:07,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Hombre,0,0,1,1,1,0,1,1,0,1,0,0,6,3,7,7,7,7,7,4,7,7,7,1,2,7,5,1,73
+183,2/22/24 15:33:21,2/22/24 15:36:55,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Mujer,0,0,1,1,1,0,1,1,0,1,1,0,7,2,4,3,2,5,6,4,5,3,2,6,5,2,5,5,57
+184,2/22/24 15:44:36,2/22/24 15:49:44,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Hombre,0,0,1,1,1,1,0,1,0,1,1,1,8,6,5,3,6,4,4,6,4,4,7,4,6,4,7,7,67
+185,2/22/24 15:52:36,2/22/24 15:58:35,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Hombre,1,0,1,1,1,0,1,1,0,0,1,1,8,3,2,3,1,4,1,5,7,6,5,4,1,5,4,3,62
+186,2/22/24 16:04:34,2/22/24 16:11:17,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,20,Mujer,1,0,1,1,1,0,0,1,0,1,0,1,7,3,5,5,5,3,3,3,5,4,5,3,2,3,6,4,59
+187,2/22/24 16:13:34,2/22/24 16:18:11,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Mujer,0,0,0,0,1,0,1,1,1,0,1,0,5,4,5,7,5,6,2,6,5,4,7,4,3,6,2,6,80
+188,2/22/24 16:30:15,2/22/24 16:36:21,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,19,Mujer,0,0,1,1,1,0,0,1,0,0,1,1,6,5,5,7,7,4,5,4,5,6,4,2,6,3,3,7,71
+189,2/22/24 16:35:14,2/22/24 16:39:02,"Español (España, alfabetización internacional)",Universidad CEU San Pablo,Farmacia,Último curso,22,Mujer,1,0,1,1,1,1,0,1,1,1,0,1,9,2,4,5,2,4,1,6,6,7,5,3,7,5,5,2,38
+190,2/22/24 17:31:25,2/22/24 17:38:19,"Español (España, alfabetización internacional)",Universidad CEU San Pablo,Farmacia,Último curso,23,Mujer,0,0,1,1,1,1,1,1,0,0,1,1,8,2,6,5,6,5,1,4,5,7,7,4,6,5,4,3,39
+191,2/22/24 17:38:02,2/22/24 17:41:34,"Español (España, alfabetización internacional)",Universidad CEU San Pablo,Medicina,Primer curso,19,Mujer,0,0,1,0,0,0,0,1,0,0,0,0,2,2,7,4,4,5,1,5,6,4,6,2,2,3,4,1,37
+192,2/22/24 17:37:38,2/22/24 17:57:56,es,Universidad CEU San Pablo,Fisioterapia,Último curso,24,Hombre,1,0,1,1,1,1,1,1,1,0,1,0,9,2,2,6,7,4,1,4,7,7,7,4,3,7,5,5,79
+193,2/22/24 17:45:16,2/22/24 18:00:12,en,Universidad CEU San Pablo,Fisioterapia,Último curso,22,Mujer,1,1,1,0,0,0,0,0,0,1,1,0,5,4,2,2,3,2,3,4,2,4,5,2,2,6,6,2,47
+194,2/22/24 18:18:21,2/22/24 18:26:54,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,33,Mujer,0,0,1,0,1,0,0,1,1,1,1,1,7,1,4,3,5,3,1,5,6,3,6,2,3,6,5,2,65
+195,2/22/24 18:59:24,2/22/24 19:08:05,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,23,Mujer,0,0,1,1,1,0,1,1,0,1,1,0,7,1,4,3,7,4,2,4,2,7,7,1,1,6,2,1,66
+196,2/22/24 19:08:43,2/22/24 19:16:41,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,25,Mujer,1,0,1,1,1,0,1,1,0,1,1,0,8,3,5,5,3,5,2,6,5,5,5,3,3,4,3,5,70
+197,2/22/24 20:20:06,2/22/24 20:21:39,"Español (España, alfabetización internacional)",Universidad CEU San Pablo,Enfermería,Último curso,23,Mujer,0,0,0,1,1,1,0,0,0,0,0,1,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,60
+198,2/22/24 20:19:43,2/22/24 20:26:16,"Español (España, alfabetización internacional)",Universidad CEU San Pablo,Enfermería,Último curso,36,Mujer,1,0,1,1,1,1,1,1,1,1,1,0,10,2,5,4,3,5,1,5,4,1,6,3,3,5,2,6,28
+199,2/22/24 21:48:41,2/22/24 21:53:19,"Español (España, alfabetización internacional)",Universidad CEU San Pablo,Farmacia,Último curso,24,Hombre,0,0,1,1,0,0,0,1,1,0,1,1,6,3,5,2,2,3,3,6,6,6,6,4,3,5,5,3,17
+200,2/22/24 22:31:29,2/22/24 22:34:57,es,Universidad CEU Cardenal Herrera,Fisioterapia,Primer curso,23,Hombre,0,0,1,0,0,1,0,1,1,0,1,0,5,1,4,2,2,4,1,3,4,2,4,1,1,4,4,1,50
+201,2/23/24 0:00:45,2/23/24 0:06:37,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Mujer,0,0,1,1,0,0,1,1,0,0,1,0,5,4,5,5,1,4,5,5,6,5,6,4,1,4,5,3,59
+202,2/23/24 9:07:51,2/23/24 9:16:29,"Español (España, alfabetización internacional)",Universidad CEU San Pablo,Enfermería,Último curso,29,Mujer,1,0,1,1,1,1,0,0,1,0,1,0,7,1,4,6,3,7,3,5,5,7,6,6,5,6,5,7,40
+203,2/23/24 10:40:28,2/23/24 10:45:54,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Mujer,0,0,1,1,1,0,1,1,0,1,1,0,7,3,5,3,1,3,5,5,3,3,5,2,2,7,6,1,50
+204,2/23/24 10:42:49,2/23/24 10:49:17,"Español (España, alfabetización internacional)",Universidad CEU San Pablo,Medicina,Primer curso,27,Mujer,0,0,1,0,0,0,1,1,0,1,0,0,4,1,4,4,6,5,2,4,5,6,4,4,4,4,4,2,45
+205,2/23/24 11:18:23,2/23/24 11:26:53,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,23,Hombre,1,0,1,1,1,0,0,1,0,0,1,0,6,4,2,4,4,3,1,4,2,6,6,5,3,6,4,2,62
+206,2/23/24 19:10:22,2/23/24 19:16:26,"Español (España, alfabetización internacional)",Universidad CEU San Pablo,Medicina,Último curso,39,Hombre,0,0,1,0,1,0,1,1,1,1,1,0,7,1,4,5,6,4,1,4,5,7,6,2,3,6,1,4,44
+207,2/24/24 18:51:30,2/24/24 19:04:18,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Mujer,0,1,1,1,1,0,0,1,1,0,1,1,8,5,5,4,3,5,4,5,3,6,6,4,3,5,3,2,63
+208,2/25/24 12:28:23,2/25/24 12:41:39,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Hombre,0,0,1,1,1,0,0,1,0,1,1,1,7,4,6,3,3,5,3,4,6,4,4,3,5,5,3,4,66
+209,2/26/24 11:27:43,2/26/24 11:32:18,es,Universidad de Castilla-La Mancha,Fisioterapia,Primer curso,18,Hombre,1,0,1,1,1,1,1,1,1,1,1,0,10,3,6,5,3,2,2,3,6,7,6,2,5,7,3,2,70
+210,2/27/24 21:33:52,2/27/24 21:38:57,"Español (España, alfabetización internacional)",Universidad CEU San Pablo,Medicina,Primer curso,18,Mujer,0,0,1,0,1,1,1,1,0,1,1,1,8,2,6,4,2,5,2,4,5,4,6,4,2,3,4,3,32
+211,2/29/24 12:05:49,2/29/24 12:14:54,en,Universidad CEU San Pablo,Fisioterapia,Último curso,26,Hombre,0,0,1,1,1,1,1,0,0,0,1,1,7,3,6,5,3,2,3,5,6,5,5,3,4,5,4,3,66
+212,2/29/24 17:16:04,2/29/24 17:20:44,es,Universidad CEU San Pablo,Fisioterapia,Último curso,23,Mujer,0,0,1,1,1,0,1,1,1,1,1,1,9,3,4,5,3,5,2,4,7,1,6,5,3,6,5,4,67
+213,2/29/24 17:17:00,2/29/24 17:23:51,es,Universidad CEU San Pablo,Fisioterapia,Último curso,21,Mujer,0,0,1,1,1,1,0,1,1,0,1,1,8,3,5,6,4,6,2,7,6,3,5,3,2,4,6,6,70
+214,2/29/24 17:50:32,2/29/24 18:04:48,es,Universidad CEU San Pablo,Fisioterapia,Último curso,25,Hombre,0,0,1,0,0,0,1,1,0,1,1,1,6,2,1,1,2,5,3,5,2,1,6,3,5,7,5,2,54
+215,2/29/24 18:31:03,2/29/24 18:35:58,es,Universidad CEU San Pablo,Fisioterapia,Último curso,23,Mujer,1,0,1,0,1,0,0,1,1,1,1,1,8,5,3,5,4,4,2,4,4,4,7,1,1,6,3,4,61
+216,2/29/24 18:57:33,2/29/24 19:01:40,es,Universidad CEU San Pablo,Fisioterapia,Último curso,30,Hombre,0,0,1,0,0,1,1,1,0,1,1,1,7,1,1,1,4,1,2,6,6,6,7,5,1,5,4,1,61
+217,2/29/24 20:33:25,2/29/24 20:40:18,es,Universidad CEU San Pablo,Fisioterapia,Último curso,21,Mujer,1,0,1,1,1,0,1,1,0,1,1,1,9,2,1,2,2,3,4,3,2,5,6,3,2,6,7,2,48
+218,2/29/24 21:25:55,2/29/24 21:31:06,es,Universidad CEU San Pablo,Fisioterapia,Último curso,22,Hombre,0,1,1,1,1,0,1,1,1,1,1,1,10,2,3,1,2,3,5,6,5,5,6,2,3,6,6,2,55
+219,3/1/24 13:40:39,3/1/24 13:42:55,English (United States)‎,Universidad CEU San Pablo,Enfermería,Primer curso,19,Mujer,1,0,1,1,1,0,1,0,0,1,0,0,6,3,5,4,1,4,5,4,2,5,6,2,4,4,2,5,35
+220,3/1/24 21:16:40,3/1/24 21:20:50,es,Universidad CEU San Pablo,Fisioterapia,Último curso,27,Mujer,0,0,0,1,1,0,1,1,1,1,1,1,8,5,1,1,4,2,5,5,1,3,5,1,2,6,3,3,45

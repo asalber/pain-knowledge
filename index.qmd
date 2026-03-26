@@ -7,6 +7,8 @@ format:
       dark: darkly
     self-contained: true
     table-of-contents: true
+bibliography: bibliography.bib
+csl: apa.csl
 execute: 
   warning: false
   message: false
@@ -16,6 +18,21 @@ execute:
 #| echo: false
 myred = "#F8766D"
 myblue = "#00BFC4"
+```
+
+```{r}
+# Packages loading.
+library(tidyverse)
+library(knitr)
+library(broom)
+library(vtable)
+library(tidymodels)
+library(ggpubr)
+library(car)
+library(rstatix)
+library(emmeans)
+library(patchwork)
+library(WebPower)
 ```
 
 ## Objetives
@@ -32,24 +49,63 @@ Cross-sectional observational study. The following questionnaires have been appl
 
 - HC-PAIRS ([Health care providers' attitudes and beliefs about functional impairments and chronic back pain](https://pubmed.ncbi.nlm.nih.gov/8788576/)). Questionnaire with 15 questions with 7 possible answers on a liker scale (from Totally disagree to Totally agree). It is scored from 1 to 7 points. The total score ranges from 15 to 105, with lower scores indicating greater knowledge about pain.
 
+## Sample size calculation
+
+We have not found a reliable Minimum Clinically Important Difference (MCID) for the RNPQ or HC-PAIRS questionnaires in the literature. However an effect size for HC-PAIRS of 1.83 has been reported [@mankelowEffectPainNeurophysiology2020] according to data from a previous study [@collearyEffectPainNeurophysiology2017].
 
 ```{r}
-# Packages loading.
-library(tidyverse)
-library(knitr)
-library(broom)
-library(vtable)
-library(tidymodels)
-library(ggpubr)
-library(car)
-library(rstatix)
-library(emmeans)
-library(patchwork)
+# Effect size calculation from 
+m1 <- -18.6; s1 <- 11.9; n1 = 36
+m2 <-  0.3; s2 <- 8.4; n2 <- 36
+sp <- sqrt(((n1-1)*s1^2 + (n2-1)*s2^2) / (n1+n2-2))
+d  <- (m1 - m2) / sp
+d
 ```
+
+Assuming this effect size, we compute the sample size required for a two-factors ANOVA test with interaction, with the following parameters:
+
+- Effect size (f): 0.46 (calculated from Cohen's d = 1.83)
+- Alpha error probability: 0.05
+- Power (1 - Beta error probability): 0.80
+- Number of groups: 4 (Physiotherapy, Medicine, Nursing, Pharmacy) x 2 (first and fourth year) = 8
+
+
+```{r}
+# Function to convert Cohen's d to eta squared
+d_to_eta2 <- function(d, n1, n2) {
+  N <- n1 + n2
+  eta2 <- d^2 / (d^2 + (N^2 / (n1 * n2)))
+  return(eta2)
+}
+# Convert Cohen's d to eta squared
+eta2 <- d_to_eta2(1.83, 36, 36)
+# Eta squared to f
+f <- sqrt(eta2 / (1 - eta2))
+
+sample_size <- wp.kanova(ng = 8, f = 0.46, ndf = 7, alpha = 0.05, power = 0.80)
+sample_size$n
+```
+
+We get a total sample size of **r`sample_size$n`** (9 students per group). 
+
+However, this effect size seems to be too high. Therefore, we have calculated the sample size based on a medium effect size (f = 0.25) for the ANOVA test.
+
+- Effect size (f): 
+- Alpha error probability: 0.05
+- Power (1 - Beta error probability): 0.80
+- Number of groups: 4 (Physiotherapy, Medicine, Nursing, Pharmacy) x 2 (first and fourth year) = 8
+
+```{r}
+sample_size <- wp.kanova(ng = 8, f = 0.25, ndf = 7, alpha = 0.05, power = 0.80)
+```
+
+Based on these parameters, the total sample size required is **r`sample_size$n`** students, with **30** students per group.
+
+## Data
 
 ```{r}
 # Data loading.
-df <- read_csv("datos/datos-2024-11-25.csv") |>
+df <- read_csv("data/data-2024-11-25.csv") |>
     # Select the variables of interest.
     select(Degree, Course, Gender, Age, RNPQ, HC_PAIRS, starts_with("X"), starts_with("Y")) |> 
     # Convert the categorical variables to factors.
@@ -672,3 +728,4 @@ marginal_means|>
     arrange(desc(abs(effect.size))) |>
     kable()
 ```
+
